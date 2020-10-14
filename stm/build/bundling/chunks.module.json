@@ -1,0 +1,131 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "824b4ad8088e7574c813",
+  "publicPath": "/static/",
+  "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
+  "assetsByChunkName": {
+    "list": [
+      "list.module.js",
+      "list.9ba5774dbddce796dc8f.hot-update.js"
+    ],
+    "stm": [
+      "stm.module.js",
+      "stm.9ba5774dbddce796dc8f.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "9ba5774dbddce796dc8f.hot-update.json",
+      "size": 57,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.9ba5774dbddce796dc8f.hot-update.js",
+      "size": 34320,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 43437,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "stm.9ba5774dbddce796dc8f.hot-update.js",
+      "size": 137217,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "stm.module.js",
+      "size": 5150239,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js",
+        "stm.9ba5774dbddce796dc8f.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js",
+        "stm.9ba5774dbddce796dc8f.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js",
+        "list.9ba5774dbddce796dc8f.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

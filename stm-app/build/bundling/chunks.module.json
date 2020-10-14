@@ -1,0 +1,112 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "a4a3cb2d47861b107976",
+  "publicPath": "/static/",
+  "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm-app/build/static",
+  "assetsByChunkName": {
+    "list": "list.module.js",
+    "stm-app": [
+      "stm-app.module.js",
+      "stm-app.e142871c8242204e5854.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "e142871c8242204e5854.hot-update.json",
+      "size": 49,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 28233,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "stm-app.e142871c8242204e5854.hot-update.js",
+      "size": 12297,
+      "chunks": [
+        "stm-app"
+      ],
+      "chunkNames": [
+        "stm-app"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "stm-app.module.js",
+      "size": 5133442,
+      "chunks": [
+        "stm-app"
+      ],
+      "chunkNames": [
+        "stm-app"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "stm-app": {
+      "chunks": [
+        "stm-app"
+      ],
+      "assets": [
+        "stm-app.module.js",
+        "stm-app.e142871c8242204e5854.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "stm-app": {
+      "chunks": [
+        "stm-app"
+      ],
+      "assets": [
+        "stm-app.module.js",
+        "stm-app.e142871c8242204e5854.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
