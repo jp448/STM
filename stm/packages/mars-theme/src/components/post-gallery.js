@@ -1,6 +1,7 @@
 import React from 'react';
-import { connect, styled } from "frontity";
+import { connect, styled, Global, css } from "frontity";
 import Image from "@frontity/components/image";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 const PostGallery = ({ state, actions, ids }) => {
   let gallery = ids.split(",");
@@ -14,20 +15,28 @@ const PostGallery = ({ state, actions, ids }) => {
 
   for (const [index, value] of gallery_images.entries()) {
     items.push(
-    <Carousel.Item>
+    <Slide index={index}>
     <img
       className="d-block w-100"
       alt={gallery_images[index].title.rendered}
       src={gallery_images[index].source_url}
     />
-  </Carousel.Item>)
+  </Slide>)
   }
 
   return (
     <Container>
-        <Carousel>
-            {items}
-        </Carousel>
+        <CarouselProvider
+        naturalSlideWidth={800}
+        naturalSlideHeight={600}
+        totalSlides={items.length}
+      >
+        <Slider>
+          {items}
+        </Slider>
+        <ButtonBack>Back</ButtonBack>
+        <ButtonNext>Next</ButtonNext>
+      </CarouselProvider>
     </Container>
   );
 };
@@ -40,29 +49,3 @@ const Container = styled.div`
   width: 400px;
   position: relative;
 `;
-
-const StyledImage = styled(Image)`
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: scale-down;
-  object-fit: scale-down;
-  overflow: hidden;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
-
-const getMedia = async (libraries, state, setData) => {
-
-    // Get other images
-    const response = await libraries.source.api.get({
-      endpoint: "media",
-    });
-    const entitiesAdded = await libraries.source.populate({ response, state });
-    await setData({
-      isReady: true,
-      items: entitiesAdded
-    });
-  
-  };

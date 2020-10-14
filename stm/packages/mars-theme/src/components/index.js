@@ -7,6 +7,7 @@ import Post from "./post";
 import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
+import reactCarouselStyles from 'pure-react-carousel/dist/react-carousel.es.css';
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -25,9 +26,10 @@ const Theme = ({ state }) => {
         <html lang="en" />
       </Head>
 
-      {/* Add some global styles for the whole site, like body or a's. 
+      {/* Add some global styles for the whole site, like body or a's.
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={globalStyles} />
+      <Global styles={reactCarouselStyles} />
 
       {/* Add the header of the site. */}
       <HeadContainer>
@@ -55,7 +57,7 @@ const globalStyles = css`
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif,
-      'Cutive Mono', monospace, 
+      'Cutive Mono', monospace,
       'Krona One', sans-serif;
   }
   a,
