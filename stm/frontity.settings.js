@@ -2,7 +2,7 @@ const settings = {
   "name": "stm",
   "state": {
     "frontity": {
-      "url": "http://wordpress.proctor-webworks.com",
+      "url": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com",
       "title": "stm",
       "description": "WordPress installation for Frontity development"
     }
@@ -41,7 +41,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://wordpress.proctor-webworks.com/wp-json/"
+          "api": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com/wp-json/"
         }
       }
     },
