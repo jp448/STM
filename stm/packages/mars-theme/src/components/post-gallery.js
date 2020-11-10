@@ -1,27 +1,23 @@
 import React from 'react';
-import { connect, styled, Global, css } from "frontity";
-import Image from "@frontity/components/image";
+import { connect, styled } from "frontity";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
-const PostGallery = ({ state, actions, ids }) => {
-  let gallery = ids.split(",");
-  const image_ids = gallery.map(id => Number(id));
-
-  if (!image_ids || !image_ids.length) return null;
-
-  const gallery_images = image_ids.map(element => state.source.data['media/']['items'].find(o => o.id === element));
+const PostGallery = ({ state, actions, images }) => {
+  if (!images) return null // exception handling if no ids are given
 
   const items = []
 
-  for (const [index, value] of gallery_images.entries()) {
+  for (const [index, value] of images.entries()) {
     items.push(
-    <Slide index={index}>
-    <img
-      className="d-block w-100"
-      alt={gallery_images[index].title.rendered}
-      src={gallery_images[index].source_url}
-    />
-  </Slide>)
+    <SlideStyled index={index}>
+      <ImageStyled
+        className="d-block w-100"
+        alt={images[index].alt}
+        src={images[index].sizes.large}
+      />
+    </SlideStyled>)
   }
 
   return (
@@ -30,12 +26,15 @@ const PostGallery = ({ state, actions, ids }) => {
         naturalSlideWidth={800}
         naturalSlideHeight={600}
         totalSlides={items.length}
+        infinite={false}
       >
-        <Slider>
-          {items}
-        </Slider>
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
+        <GalleryContainer>
+          <SliderStyled>
+            {items}
+          </SliderStyled>
+          <ButtonBackStyled><FontAwesomeIcon icon={faCaretLeft} size="4x"/></ButtonBackStyled>
+          <ButtonNextStyled><FontAwesomeIcon icon={faCaretRight} size="4x"/></ButtonNextStyled>
+        </GalleryContainer>
       </CarouselProvider>
     </Container>
   );
@@ -44,8 +43,45 @@ const PostGallery = ({ state, actions, ids }) => {
 export default connect(PostGallery);
 
 const Container = styled.div`
-  margin-top: 16px;
-  height: 300px;
-  width: 400px;
   position: relative;
+`;
+
+const GalleryContainer = styled.div`
+  position: relative;
+`;
+
+const ButtonBackStyled = styled(ButtonBack)`
+  left: -50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+`;
+
+const ButtonNextStyled = styled(ButtonNext)`
+  right: -50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+`;
+
+const SliderStyled = styled(Slider)`
+  
+`;
+
+const SlideStyled = styled(Slide)`
+`;
+
+const ImageStyled = styled.img`
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-height: 500px;
+  max-width: 100%;
 `;
