@@ -13,22 +13,35 @@ const settings = {
       "state": {
         "theme": {
           "menu": [
-            [
-              "STM",
-              "/category/home"
-            ],
-            [
-              "Projects",
-              "/category/projects/"
-            ],
-            [
-              "Competitions",
-              "/category/competitions/"
-            ],
-            [
-              "Info",
-              "/page/info"
-            ]
+            {
+              "name": "STM",
+              "link": "/category/home",
+              "menu": []
+            },
+            {
+              "name": "Projects",
+              "link": "/category/projects/",
+              "menu": [
+                {
+                  "name": "Selected Projects",
+                  "link": "/category/projects/"
+                },
+                {
+                  "name": "All Projects",
+                  "link": "/category/competitions/"
+                }
+              ]
+            },
+            {
+              "name": "Competitions",
+              "link": "/category/competitions/",
+              "menu": []
+            },
+            {
+              "name": "Info",
+              "link": "/page/info",
+              "menu": []
+            }
           ],
           "featured": {
             "showOnList": true,

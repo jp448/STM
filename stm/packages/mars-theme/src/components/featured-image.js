@@ -41,18 +41,6 @@ const Container = styled.div`
   position: relative;
 `;
 
-const StyledImage = styled(Image)`
-  display: block;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: scale-down;
-  object-fit: scale-down;
-  overflow: hidden;
-  &:hover {
-    opacity: 0.5;
-  }
-`;
-
 const Text = styled.div`
   position: absolute;
   top: 50%;
@@ -61,5 +49,20 @@ const Text = styled.div`
   visibility: hidden;
   ${Container}:hover & {
     visibility: visible;
+  }
+`;
+
+const StyledImage = styled(Image)`
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: scale-down;
+  object-fit: scale-down;
+  overflow: hidden;
+  &:hover {
+    opacity: 0.3;
+  }
+  ${Text}:hover & {
+    opacity: 0.5;
   }
 `;

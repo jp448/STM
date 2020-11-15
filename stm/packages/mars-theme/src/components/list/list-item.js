@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
-import FeaturedMedia from "../featured-media";
+import FeaturedImage from "../featured-image";
 
 /**
  * Item Component
@@ -24,7 +24,7 @@ const Item = ({ state, item }) => {
   return (
     <Article>
       <Link link={item.link}>
-        <FeaturedMedia id={item.featured_media} title={item.title.rendered} />
+        <FeaturedImage id={item.featured_media} title={item.title.rendered} />
       </Link>
     </Article>
   );

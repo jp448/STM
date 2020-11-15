@@ -24,7 +24,7 @@ const PostGallery = ({ state, actions, images }) => {
     <Container>
         <CarouselProvider
         naturalSlideWidth={800}
-        naturalSlideHeight={600}
+        naturalSlideHeight={425}
         totalSlides={items.length}
         infinite={false}
       >
@@ -44,6 +44,11 @@ export default connect(PostGallery);
 
 const Container = styled.div`
   position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding-bottom: 100px;
 `;
 
 const GalleryContainer = styled.div`
@@ -78,10 +83,11 @@ const SlideStyled = styled(Slide)`
 const ImageStyled = styled.img`
   position: absolute;
   margin: auto;
+  object-fit: contain;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  max-height: 500px;
+  max-height: 100%;
   max-width: 100%;
 `;

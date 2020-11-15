@@ -67,6 +67,7 @@ const globalStyles = css`
   }
 `;
 
+
 const HeadContainer = styled.div`
   display: flex;
   align-items: center;
