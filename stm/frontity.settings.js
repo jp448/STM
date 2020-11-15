@@ -28,7 +28,7 @@ const settings = {
                 },
                 {
                   "name": "All Projects",
-                  "link": "/category/competitions/"
+                  "link": "/category/competitions/?type=list"
                 }
               ]
             },

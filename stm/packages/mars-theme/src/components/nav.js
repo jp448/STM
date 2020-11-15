@@ -95,7 +95,6 @@ const NavTop = styled.div`
   padding: 0 24px;
   margin: 0;
   overflow-x: auto;
-  position: fixed;
   left: 15%;
 
   @media screen and (max-width: 560px) {
@@ -104,11 +103,7 @@ const NavTop = styled.div`
 `;
 
 const NavLink = styled.a`
-&:hover {
-  text-decoration: underline;
-}
-
-&:after
+  cursor: pointer;
 `;
 
 const NavBottom = styled.div`
@@ -122,8 +117,7 @@ const NavBottom = styled.div`
   margin: 0;
   padding: 0 24px;
   overflow-x: auto;
-  position: fixed;
-  top: 24px;
+  top: 30px;
   left: 15%;
 `;
 
@@ -134,6 +128,8 @@ const NavItem = styled.div`
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;
+  -moz-box-sizing: border-box;
+  position: relative;
 
   & > a {
     display: inline-block;
@@ -141,9 +137,41 @@ const NavItem = styled.div`
     border-bottom: 2px solid;
     border-bottom-color: transparent;
     /* Use for semantic approach to style the current link */
-    &[aria-current="page"] {
-      border-bottom-color: black;
-    }
+ 
+  }
+
+  & > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: black;
+    visibility: hidden;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .50s linear;
+  }
+
+  & > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  & > a:focus:before  {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  &:after {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  &:before {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
   }
 
   &:first-of-type {
@@ -156,7 +184,6 @@ const NavItem = styled.div`
     &:after {
       content: "";
       display: inline-block;
-      width: 24px;
     }
   }
 `;
