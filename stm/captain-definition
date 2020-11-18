@@ -6,7 +6,7 @@
     "COPY . .",
     "RUN npm install --only=production",
     "RUN npx frontity build",
-    "EXPOSE 8080",
-    "CMD [ 'npm', 'run', 'serve', '--port', '8080' ]"
+    "EXPOSE 80",
+    "CMD [ 'npx', 'frontity', 'serve', '--port', '80' ]"
   ]
 }
