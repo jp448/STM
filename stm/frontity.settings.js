@@ -28,18 +28,27 @@ const settings = {
                 },
                 {
                   "name": "All Projects",
-                  "link": "/category/competitions/?type=list"
+                  "link": "/category/projects/?type=list"
                 }
               ]
             },
             {
               "name": "Competitions",
               "link": "/category/competitions/",
-              "menu": []
+              "menu": [
+                {
+                  "name": "Selected Competitions",
+                  "link": "/category/competitions/"
+                },
+                {
+                  "name": "All Competitions",
+                  "link": "/category/competitions/?type=list"
+                }
+              ]
             },
             {
               "name": "Info",
-              "link": "/page/info",
+              "link": "/info",
               "menu": []
             }
           ],

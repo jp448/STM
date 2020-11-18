@@ -12,8 +12,6 @@ import FeaturedImage from "../featured-image";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
-  const author = state.source.author[item.author];
-  const date = new Date(item.date);
 
   const Article = styled.article`
     padding-top: ${Math.floor(Math.random()*100+(-10))}px;

@@ -96,6 +96,8 @@ const NavTop = styled.div`
   margin: 0;
   overflow-x: auto;
   left: 15%;
+  position: fixed;
+  background-color: #fff;
 
   @media screen and (max-width: 560px) {
     display: none;
@@ -119,6 +121,7 @@ const NavBottom = styled.div`
   overflow-x: auto;
   top: 30px;
   left: 15%;
+  position: fixed;
 `;
 
 const NavItem = styled.div`
