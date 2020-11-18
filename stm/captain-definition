@@ -6,7 +6,6 @@
     "COPY . .",
     "RUN npm install --only=production",
     "RUN npx frontity build",
-    "RUN chmod -R 777 app",
     "EXPOSE 8080",
     "CMD [ 'npm', 'run', 'serve', '--port', '8080' ]"
   ]
