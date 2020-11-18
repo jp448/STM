@@ -2,9 +2,12 @@
   "schemaVersion": 2,
   "dockerfileLines": [
     "FROM node:12-alpine",
+    "RUN mkdir -p usr/src/app",
+    "COPY . .",
     "RUN npm install --only=production",
-    "COPY ./build /app", 
+    "RUN npx frontity build",
     "RUN chmod -R 777 app",
-    "CMD [ 'npm', 'run', 'serve' ]"
+    "EXPOSE 8080",
+    "CMD [ 'npm', 'run', 'serve', '--port', '8080' ]"
   ]
 }
