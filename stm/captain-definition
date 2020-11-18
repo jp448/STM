@@ -1,9 +1,10 @@
 {
   "schemaVersion": 2,
   "dockerfileLines": [
-    "FROM socialengine/nginx-spa:latest", 
+    "FROM node:12-alpine",
+    "RUN npm install --only=production",
     "COPY ./build /app", 
-    "RUN chmod -R 777 /app",
-    "CMD [ 'npx', 'frontity', 'serve' ]"
+    "RUN chmod -R 777 app",
+    "CMD [ 'nom', 'run', 'serve' ]"
   ]
 }
