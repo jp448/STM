@@ -62,6 +62,9 @@ const ButtonBackStyled = styled(ButtonBack)`
   transform: translateY(-50%);
   background: transparent;
   border: none;
+  @media (min-width: 100px) and (max-width: 576px) {
+    display: none;
+  }
 `;
 
 const ButtonNextStyled = styled(ButtonNext)`
@@ -71,6 +74,9 @@ const ButtonNextStyled = styled(ButtonNext)`
   transform: translateY(-50%);
   background: transparent;
   border: none;
+  @media (min-width: 100px) and (max-width: 576px) {
+    display: none;
+  }
 `;
 
 const SliderStyled = styled(Slider)`

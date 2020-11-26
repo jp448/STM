@@ -42,8 +42,6 @@ const Container = styled.div`
   margin: 0;
 `;
 
-
-
 const PostGalleryStyled = styled(PostGallery)`
   z-index: 0;
 `;
@@ -52,14 +50,3 @@ const InfoContainerStyled = styled(InfoContainer)`
   z-index: 10;
 `;
 
-const Author = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
-`;
-
-const DateWrapper = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
-`;

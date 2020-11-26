@@ -1,0 +1,111 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "acb707328cb5feade1a7",
+  "publicPath": "/static/",
+  "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
+  "assetsByChunkName": {
+    "list": [
+      "list.module.js",
+      "list.844dd55e0ac4d5461260.hot-update.js"
+    ],
+    "stm": "stm.module.js"
+  },
+  "assets": [
+    {
+      "name": "844dd55e0ac4d5461260.hot-update.json",
+      "size": 46,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.844dd55e0ac4d5461260.hot-update.js",
+      "size": 15908,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 44393,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "stm.module.js",
+      "size": 8006504,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js",
+        "list.844dd55e0ac4d5461260.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

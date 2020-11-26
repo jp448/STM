@@ -14,10 +14,15 @@ import FeaturedImage from "../featured-image";
 const Item = ({ state, item }) => {
 
   const Article = styled.article`
-    padding-top: ${Math.floor(Math.random()*100+(-10))}px;
-    padding-bottom: ${Math.floor(Math.random()*100+(-10))}px;
-    padding-left: ${Math.floor(Math.random()*50+(-10))}px;
-    padding-right: ${Math.floor(Math.random()*50+(-10))}px;
+    @media (min-width: 576px) {
+      padding-top: ${Math.floor(Math.random()*100+(-10))}px;
+      padding-bottom: ${Math.floor(Math.random()*100+(-10))}px;
+      padding-left: ${Math.floor(Math.random()*50+(-10))}px;
+      padding-right: ${Math.floor(Math.random()*50+(-10))}px;
+    }
+    @media (min-width: 100px) and (max-width: 576px) {
+      padding: 0;
+    }
   `;
   return (
     <Article>

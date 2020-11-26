@@ -39,6 +39,9 @@ const Container = styled.div`
   height: 300px;
   width: 400px;
   position: relative;
+  @media (min-width: 100px) and (max-width: 576px) {
+    width: 100%;
+  }
 `;
 
 const Text = styled.div`
@@ -46,6 +49,7 @@ const Text = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Cutive Mono', monospace;
   visibility: hidden;
   ${Container}:hover & {
     visibility: visible;
@@ -59,10 +63,8 @@ const StyledImage = styled(Image)`
   -o-object-fit: scale-down;
   object-fit: scale-down;
   overflow: hidden;
-  &:hover {
+
+  ${Container}:hover & {
     opacity: 0.3;
-  }
-  ${Text}:hover & {
-    opacity: 0.5;
   }
 `;

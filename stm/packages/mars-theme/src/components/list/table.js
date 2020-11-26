@@ -12,6 +12,7 @@ import Link from "../link";
  */
 const Table = ({ state, items }) => {
 
+  const data = state.source.get(state.router.link);
   const tableheaders = ["Projekte", "Ort", "Zeit", "Kosten"];
   let headerdata = [];
   tableheaders.forEach((element) => {
@@ -19,13 +20,14 @@ const Table = ({ state, items }) => {
   })
 
   let tabledata = [];
-  {items.map(({type, id }) => {
+  {data.items.map(({type, id }) => {
     const item = state.source[type][id];
+    console.log(item)
     tabledata.push(<TableRow>
         <TableData> <Link link={item.link}>{item.title.rendered}</Link></TableData>
-        <TableData><Link link={item.link}>{item.title.rendered}</Link></TableData>
-        <TableData><Link link={item.link}>{item.title.rendered}</Link></TableData>
-        <TableData><Link link={item.link}>{item.title.rendered}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.location}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.time}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.cost}</Link></TableData>
     </TableRow>);
     })}
 
@@ -49,11 +51,13 @@ const Table = ({ state, items }) => {
 export default connect(Table);
 
 const Container = styled.div`
-    margin-top: 50px;
+    margin-top: 80px;
+    width: 100%;
 `;
 
 const TableElement = styled.table`
     border-collapse: collapse;
+    width: 100%;
 `;
 
 const TableHead = styled.thead`
@@ -98,6 +102,7 @@ const TableData = styled.td`
         cursor: pointer;
     }
 `;
+
 
 
 

@@ -73,4 +73,6 @@ const AccordionText = styled.div`
     font-weight: 400;
     font-size: 14px;
     padding: 18px;
+    border-top: 4px solid black;
+    font-family: 'Cutive Mono', monospace;
 `;

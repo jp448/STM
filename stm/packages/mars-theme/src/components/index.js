@@ -3,6 +3,7 @@ import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
 import List from "./list";
+import Table from "./list/table";
 import Post from "./post";
 import Page from "./page";
 import Loading from "./loading";
@@ -17,6 +18,23 @@ import reactCarouselStyles from 'pure-react-carousel/dist/react-carousel.es.css'
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+
+  function parseURLParams(link) {
+    let paramsMap = {};
+    const urlParams = link.split('?').filter(i => i.includes('='));
+    if (urlParams.length > 0) {
+      const urlParamsSeperate = urlParams[0].split('&');
+      urlParamsSeperate.forEach(e => {
+        let pair = e.split('=');
+        if (pair.length > 1) {
+          paramsMap[pair[0]] = pair[1];
+        }
+      });
+    }
+    return paramsMap;
+  }
+
+  const urlParams = parseURLParams(state.router.link);
 
   return (
     <>
@@ -42,7 +60,8 @@ const Theme = ({ state }) => {
       <Main>
         <Switch>
           <Loading when={data.isFetching} />
-          <List when={data.isArchive} />
+          <List when={data.isArchive && urlParams['type'] !== 'list'} />
+          <Table when={data.isArchive && urlParams['type'] === 'list'} />
           <Post when={data.type === 'post'} />
           <Page when={data.type === 'page'} />
           <PageError when={data.isError} />
