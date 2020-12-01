@@ -25,7 +25,7 @@ function Accordion(props) {
         </AccordionText> 
       </AccordionContent>  
       <AccordionStyle onClick={toggleAccordion}>
-        <AccordionTitle>{props.title}</AccordionTitle>
+        <AccordionTitle>{props.title}<i class="fas fa-sort-up"></i></AccordionTitle>
       </AccordionStyle>
     </AccordionSection>
   );

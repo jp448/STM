@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
@@ -10,6 +10,7 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import reactCarouselStyles from 'pure-react-carousel/dist/react-carousel.es.css';
+import Banner from "./banner.js";
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -18,6 +19,8 @@ import reactCarouselStyles from 'pure-react-carousel/dist/react-carousel.es.css'
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+
+  const [showIntro, setIntroState] = useState(true);
 
   function parseURLParams(link) {
     let paramsMap = {};
@@ -36,6 +39,31 @@ const Theme = ({ state }) => {
 
   const urlParams = parseURLParams(state.router.link);
 
+  let content = [];
+  if (showIntro) {
+    content = <Main><Banner onClick= {setIntroState} /></Main>;
+  } else {
+    content = 
+            <>
+              <HeadContainer>
+                <Header />
+              </HeadContainer>
+
+              {/* Add the main section. It renders a different component depending
+              on the type of URL we are in. */}
+              <Main>
+                <Switch>
+                  <Loading when={data.isFetching} />
+                  <List when={data.isArchive && urlParams['type'] !== 'list'} />
+                  <Table when={data.isArchive && urlParams['type'] === 'list'} />
+                  <Post when={data.type === 'post'} />
+                  <Page when={data.type === 'page'} />
+                  <PageError when={data.isError} />
+                </Switch>
+              </Main>;
+            </>
+  }
+
   return (
     <>
       {/* Add some metatags to the <head> of the HTML. */}
@@ -51,22 +79,7 @@ const Theme = ({ state }) => {
       <Global styles={reactCarouselStyles} />
 
       {/* Add the header of the site. */}
-      <HeadContainer>
-        <Header />
-      </HeadContainer>
-
-      {/* Add the main section. It renders a different component depending
-      on the type of URL we are in. */}
-      <Main>
-        <Switch>
-          <Loading when={data.isFetching} />
-          <List when={data.isArchive && urlParams['type'] !== 'list'} />
-          <Table when={data.isArchive && urlParams['type'] === 'list'} />
-          <Post when={data.type === 'post'} />
-          <Page when={data.type === 'page'} />
-          <PageError when={data.isError} />
-        </Switch>
-      </Main>
+      {content}
     </>
   );
 };

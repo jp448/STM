@@ -3,10 +3,11 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 
 
-const Banner = ({ state }) => {
+const Banner = ({ state, actions, onClick }) => {
+
   return (
     <Container>
-      <Title />
+      <Title onClick={() => onClick(false)}>stm°</Title>
     </Container>
   );
 };
@@ -21,9 +22,10 @@ const Container = styled.div`
 const Title = styled.h1`
     margin-top: 10rem;
     text-align: center;
-    color: green;
+    color: #AA9039;
     font-size: 20rem;
     font-family: 'Krona One', sans-serif;
+    cursor: pointer;
 `;
 
 const StyledLink = styled(Link)`

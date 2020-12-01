@@ -44,11 +44,23 @@ export default connect(PostGallery);
 
 const Container = styled.div`
   position: relative;
-  width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
   padding-bottom: 100px;
+  @media (min-width: 100px) and (max-width: 576px) {
+    margin-top: 200px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    margin-top: 200px;
+  }
+  @media (min-width: 992px) {
+    width: 80%;
+    margin-top: 50px;
+  }
 `;
 
 const GalleryContainer = styled.div`
@@ -75,6 +87,9 @@ const ButtonNextStyled = styled(ButtonNext)`
   background: transparent;
   border: none;
   @media (min-width: 100px) and (max-width: 576px) {
+    display: none;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
     display: none;
   }
 `;
