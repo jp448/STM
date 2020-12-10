@@ -13,7 +13,7 @@ import Link from "../link";
 const Table = ({ state, items }) => {
 
   const data = state.source.get(state.router.link);
-  const tableheaders = ["Projekte", "Ort", "Zeit", "Kosten"];
+  const tableheaders = ["projekt", "jahr", "ort", "programm", "inhalt", "wettbewerb", "gebaut"];
   let headerdata = [];
   tableheaders.forEach((element) => {
     headerdata.push(<TableHeader>{element}</TableHeader>);
@@ -25,9 +25,12 @@ const Table = ({ state, items }) => {
     console.log(item)
     tabledata.push(<TableRow>
         <TableData> <Link link={item.link}>{item.title.rendered}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.year}</Link></TableData>
         <TableData><Link link={item.link}>{item.acf.location}</Link></TableData>
-        <TableData><Link link={item.link}>{item.acf.time}</Link></TableData>
-        <TableData><Link link={item.link}>{item.acf.cost}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.program}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.description}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.competition}</Link></TableData>
+        <TableData><Link link={item.link}>{item.acf.built ? "x" : ""}</Link></TableData>
     </TableRow>);
     })}
 
@@ -79,7 +82,7 @@ const TableHeader = styled.th`
     color: #050401;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 50px;
+    padding-left: 15px;
     padding-right: 15px;
     text-align: left;
 `;
@@ -88,11 +91,12 @@ const TableBody = styled.tbody`
 `;
 
 const TableData = styled.td`
-    vertical-align: bottom;
+    text-align: center; 
+    vertical-align: middle;
     font-family: 'Cutive Mono', monospace;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 50px;
+    padding-left: 15px;
     padding-right: 15px;
     text-align: left;
     ${TableRow}:hover & {

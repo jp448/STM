@@ -2,7 +2,7 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Image from "@frontity/components/image";
 
-const FeaturedImage = ({ state, id, title }) => {
+const FeaturedImage = ({ state, id, title, large }) => {
   const media = state.source.attachment[id];
 
   if (!media) return null;
@@ -23,11 +23,10 @@ const FeaturedImage = ({ state, id, title }) => {
   return (
     <Container>
         <StyledImage
-          alt={media.title.rendered}
-          src={media.source_url}
-          srcSet={srcset}
-        />
+          style={{backgroundImage: `url(${media.media_details.sizes.medium.source_url})`, height: media.media_details.sizes.medium.height, width: media.media_details.sizes.medium.width}}
+        >
         <Text>{title}</Text>
+        </StyledImage>
     </Container>
   );
 };
@@ -45,10 +44,9 @@ const Container = styled.div`
 `;
 
 const Text = styled.div`
+  bottom: 8px;
+  left: 16px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-family: 'Cutive Mono', monospace;
   visibility: hidden;
   ${Container}:hover & {
@@ -56,10 +54,10 @@ const Text = styled.div`
   }
 `;
 
-const StyledImage = styled(Image)`
-  display: block;
-  height: 100%;
-  width: 100%;
+const StyledImage = styled.div`
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
   -o-object-fit: scale-down;
   object-fit: scale-down;
   overflow: hidden;

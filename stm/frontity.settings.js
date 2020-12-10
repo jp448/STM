@@ -14,41 +14,49 @@ const settings = {
         "theme": {
           "menu": [
             {
-              "name": "STM",
+              "name": "stm",
               "link": "/category/home",
               "menu": []
             },
             {
-              "name": "Projects",
-              "link": "/category/projects/",
-              "menu": [
-                {
-                  "name": "Selected Projects",
-                  "link": "/category/projects/"
-                },
-                {
-                  "name": "All Projects",
-                  "link": "/category/projects/?type=list"
-                }
-              ]
+              "name": "projekte",
+              "link": "/category/projects/?type=list",
+              "menu": []
             },
             {
-              "name": "Competitions",
-              "link": "/category/competitions/",
-              "menu": [
-                {
-                  "name": "Selected Competitions",
-                  "link": "/category/competitions/"
-                },
-                {
-                  "name": "All Competitions",
-                  "link": "/category/competitions/?type=list"
-                }
-              ]
+              "name": "betreuungen",
+              "link": "/category/competitions/?type=list",
+              "menu": []
             },
             {
-              "name": "Info",
+              "name": "info",
               "link": "/info",
+              "menu": [
+                {
+                  "name": "profil",
+                  "link": "/profil"
+                },
+                {
+                  "name": "team",
+                  "link": "/team"
+                },
+                {
+                  "name": "jobs",
+                  "link": "/jobs"
+                },
+                {
+                  "name": "kontakt",
+                  "link": "/kontakt"
+                },
+                {
+                  "name": "impressum",
+                  "link": "/impressum"
+                }
+              ]
+            },
+            {
+              "name": "aktuelles",
+              "link": "/aktuelles",
               "menu": []
             }
           ],
