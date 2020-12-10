@@ -3,9 +3,33 @@ import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
 
+function shuffleArray(array) {
+  let i = array.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
+
+  let projects = shuffleArray([...data.items]);
+
+  let sizeArray = [false];
+  let toggle = true;
+  for (let i = 1; i < projects.length; i += 2) {
+    sizeArray.push(toggle);
+    if (i + 2 <= projects.length) {
+      sizeArray.push(toggle);
+    }
+    toggle = !toggle;
+  }
+  let iterator = -1;
 
   return (
     <Container>
@@ -17,10 +41,11 @@ const List = ({ state }) => {
           Author: <b>{decode(state.source.author[data.id].name)}</b>
         </Header>
       )}
-      {data.items.map(({ type, id }) => {
+      {projects.map(({ type, id }) => {
         const item = state.source[type][id];
+        iterator += 1;
         // Render one Item component for each one.
-        return (<Item key={item.id} item={item} />);
+        return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
        })}
       <Pagination />
     </Container>
@@ -33,9 +58,9 @@ const Container = styled.section`
   margin: 0;
   padding: 24px;
   list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   @media (min-width: 100px) and (max-width: 576px) {
     grid-template-columns: 1fr;
     grid-gap: 8px;

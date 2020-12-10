@@ -6,25 +6,26 @@ const FeaturedImage = ({ state, id, title, large }) => {
   const media = state.source.attachment[id];
 
   if (!media) return null;
+  console.log(media.media_details.sizes);
+  let media_selected = media.media_details.sizes.home_small;
+  
+  if (large) {
+    media_selected = media.media_details.sizes.home_large;
+    if (!media_selected) {
+      // If an image is smaller than the size to be generated it fails to be generated. Hence fallback!
+      media_selected = media.media_details.sizes.home_small;
+    }
+  }
 
-  const srcset =
-    Object.values(media.media_details.sizes)
-      // Get the url and width of each size.
-      .map((item) => [item.source_url, item.width])
-      // Recude them to a string with the format required by `srcset`.
-      .reduce(
-        (final, current, index, array) =>
-          final.concat(
-            `${current.join(" ")}w${index !== array.length - 1 ? ", " : ""}`
-          ),
-        ""
-      ) || null;
+  const height = media_selected.height;
+  const width = media_selected.width;
 
   return (
-    <Container>
+    <Container style={{height: height, width: width}} >
         <StyledImage
-          style={{backgroundImage: `url(${media.media_details.sizes.medium.source_url})`, height: media.media_details.sizes.medium.height, width: media.media_details.sizes.medium.width}}
+          style={{backgroundImage: `url(${media_selected.source_url})`, height: height, width: width}}
         >
+        <Layer style={{height: height, width: width}}></Layer>
         <Text>{title}</Text>
         </StyledImage>
     </Container>
@@ -35,22 +36,9 @@ export default connect(FeaturedImage);
 
 const Container = styled.div`
   margin-top: 16px;
-  height: 300px;
-  width: 400px;
   position: relative;
   @media (min-width: 100px) and (max-width: 576px) {
     width: 100%;
-  }
-`;
-
-const Text = styled.div`
-  bottom: 8px;
-  left: 16px;
-  position: absolute;
-  font-family: 'Cutive Mono', monospace;
-  visibility: hidden;
-  ${Container}:hover & {
-    visibility: visible;
   }
 `;
 
@@ -61,8 +49,29 @@ const StyledImage = styled.div`
   -o-object-fit: scale-down;
   object-fit: scale-down;
   overflow: hidden;
+  &:hover {
 
-  ${Container}:hover & {
-    opacity: 0.3;
   }
 `;
+
+const Layer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  ${StyledImage}:hover & {
+    background-color: rgba(230,230,230,0.7);
+  }
+`;
+
+const Text = styled.div`
+  bottom: 8px;
+  left: 16px;
+  position: absolute;
+  font-family: 'Cutive Mono', monospace;
+  visibility: hidden;
+  ${StyledImage}:hover & {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
+
