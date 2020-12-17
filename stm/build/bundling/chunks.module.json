@@ -2,20 +2,20 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "252b0911aef5d536744d",
+  "hash": "4db8010f889e3ae4474f",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
-    "list": [
-      "list.module.js",
-      "list.89f525007b9ca1bccf24.hot-update.js"
-    ],
-    "stm": "stm.module.js"
+    "list": "list.module.js",
+    "stm": [
+      "stm.module.js",
+      "stm.b6712b4274148942928e.hot-update.js"
+    ]
   },
   "assets": [
     {
-      "name": "89f525007b9ca1bccf24.hot-update.json",
-      "size": 46,
+      "name": "b6712b4274148942928e.hot-update.json",
+      "size": 45,
       "chunks": [],
       "chunkNames": [],
       "info": {
@@ -25,23 +25,24 @@
       "emitted": false
     },
     {
-      "name": "list.89f525007b9ca1bccf24.hot-update.js",
-      "size": 8334,
-      "chunks": [
-        "list"
-      ],
-      "chunkNames": [
-        "list"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
+      "name": "images/arrow-left.svg",
+      "size": 1000,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/arrow-right.svg",
+      "size": 1086,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
       "emitted": false
     },
     {
       "name": "list.module.js",
-      "size": 53823,
+      "size": 53517,
       "chunks": [
         "list"
       ],
@@ -52,8 +53,23 @@
       "emitted": false
     },
     {
+      "name": "stm.b6712b4274148942928e.hot-update.js",
+      "size": 75384,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "stm.module.js",
-      "size": 8028126,
+      "size": 5648218,
       "chunks": [
         "stm"
       ],
@@ -71,7 +87,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.b6712b4274148942928e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -83,7 +100,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.b6712b4274148942928e.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -93,8 +111,7 @@
         "list"
       ],
       "assets": [
-        "list.module.js",
-        "list.89f525007b9ca1bccf24.hot-update.js"
+        "list.module.js"
       ],
       "children": {},
       "childAssets": {}

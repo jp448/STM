@@ -6,7 +6,7 @@ const FeaturedImage = ({ state, id, title, large }) => {
   const media = state.source.attachment[id];
 
   if (!media) return null;
-  console.log(media.media_details.sizes);
+
   let media_selected = media.media_details.sizes.home_small;
   
   if (large) {

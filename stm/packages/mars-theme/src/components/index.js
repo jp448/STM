@@ -60,7 +60,7 @@ const Theme = ({ state }) => {
                   <Page when={data.type === 'page'} />
                   <PageError when={data.isError} />
                 </Switch>
-              </Main>;
+              </Main>
             </>
   }
 

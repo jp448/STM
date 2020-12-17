@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect, styled } from "frontity";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import arrowLeft from "./../img/arrow-left.svg";
+import arrowRight from "./../img/arrow-right.svg";
 
 const PostGallery = ({ state, actions, images }) => {
   if (!images) return null // exception handling if no ids are given
@@ -32,8 +32,8 @@ const PostGallery = ({ state, actions, images }) => {
           <SliderStyled>
             {items}
           </SliderStyled>
-          <ButtonBackStyled><FontAwesomeIcon icon={faCaretLeft} size="4x"/></ButtonBackStyled>
-          <ButtonNextStyled><FontAwesomeIcon icon={faCaretRight} size="4x"/></ButtonNextStyled>
+          <ButtonBackStyled><img src={arrowLeft} /></ButtonBackStyled>
+          <ButtonNextStyled><img src={arrowRight} /></ButtonNextStyled>
         </GalleryContainer>
       </CarouselProvider>
     </Container>
@@ -68,6 +68,7 @@ const GalleryContainer = styled.div`
 `;
 
 const ButtonBackStyled = styled(ButtonBack)`
+  width: 45px;
   left: -50px;
   position: absolute;
   top: 50%;
@@ -77,9 +78,13 @@ const ButtonBackStyled = styled(ButtonBack)`
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
+  &:disabled {
+    display: none;
+  }
 `;
 
 const ButtonNextStyled = styled(ButtonNext)`
+  width: 45px;
   right: -50px;
   position: absolute;
   top: 50%;
@@ -90,6 +95,9 @@ const ButtonNextStyled = styled(ButtonNext)`
     display: none;
   }
   @media (min-width: 768px) and (max-width: 992px) {
+    display: none;
+  }
+  &:disabled {
     display: none;
   }
 `;
