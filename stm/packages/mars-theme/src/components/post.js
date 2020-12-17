@@ -38,8 +38,11 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post);
 
 const Container = styled.div`
-  width: 100%;
-  margin: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 `;
 
 const PostGalleryStyled = styled(PostGallery)`

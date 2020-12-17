@@ -1,6 +1,5 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Image from "@frontity/components/image";
 
 const FeaturedImage = ({ state, id, title, large }) => {
   const media = state.source.attachment[id];
@@ -38,7 +37,8 @@ const Container = styled.div`
   margin-top: 16px;
   position: relative;
   @media (min-width: 100px) and (max-width: 576px) {
-    width: 100%;
+    width: 100% !important;
+    height: auto !important;
   }
 `;
 
@@ -49,9 +49,6 @@ const StyledImage = styled.div`
   -o-object-fit: scale-down;
   object-fit: scale-down;
   overflow: hidden;
-  &:hover {
-
-  }
 `;
 
 const Layer = styled.div`

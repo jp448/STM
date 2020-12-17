@@ -84,18 +84,19 @@ const Nav = ({ state, actions }) => {
 export default connect(Nav);
 
 const NavContainer = styled.nav`
+  z-index: 10;
 `;
 
 const NavTop = styled.div`
   list-style: none;
   display: flex;
-  width: 848px;
+  width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   padding: 0 24px;
   margin: 0;
   overflow-x: auto;
-  left: 15%;
+  left: 0;
   position: fixed;
   background-color: #fff;
 

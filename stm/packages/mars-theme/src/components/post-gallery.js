@@ -15,7 +15,7 @@ const PostGallery = ({ state, actions, images }) => {
       <ImageStyled
         className="d-block w-100"
         alt={images[index].alt}
-        src={images[index].sizes.large}
+        src={images[index].sizes.gallery ? images[index].sizes.gallery : images[index].url}
       />
     </SlideStyled>)
   }
@@ -24,7 +24,7 @@ const PostGallery = ({ state, actions, images }) => {
     <Container>
         <CarouselProvider
         naturalSlideWidth={800}
-        naturalSlideHeight={425}
+        naturalSlideHeight={350}
         totalSlides={items.length}
         infinite={false}
       >
@@ -46,7 +46,6 @@ const Container = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 100px;
   @media (min-width: 100px) and (max-width: 576px) {
     margin-top: 200px;
     margin-left: 0;
@@ -58,8 +57,8 @@ const Container = styled.div`
     margin-top: 200px;
   }
   @media (min-width: 992px) {
-    width: 80%;
-    margin-top: 50px;
+    width: 100%;
+    margin-top: 35px;
   }
 `;
 
@@ -69,7 +68,7 @@ const GalleryContainer = styled.div`
 
 const ButtonBackStyled = styled(ButtonBack)`
   width: 45px;
-  left: -50px;
+  left: 50px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -85,7 +84,7 @@ const ButtonBackStyled = styled(ButtonBack)`
 
 const ButtonNextStyled = styled(ButtonNext)`
   width: 45px;
-  right: -50px;
+  right: 50px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
