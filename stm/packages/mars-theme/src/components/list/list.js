@@ -62,10 +62,8 @@ const Container = styled.section`
   flex-wrap: wrap;
   justify-content: center;
   @media (min-width: 100px) and (max-width: 576px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 8px;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
   }
 `;
 

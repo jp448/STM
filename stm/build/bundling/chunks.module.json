@@ -2,28 +2,14 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "06288ae2307e0f3646ad",
+  "hash": "c0308902fdd06c1019ff",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": [
-      "stm.module.js",
-      "stm.3464ca2ea949a2ee792a.hot-update.js"
-    ]
+    "stm": "stm.module.js"
   },
   "assets": [
-    {
-      "name": "3464ca2ea949a2ee792a.hot-update.json",
-      "size": 45,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -41,8 +27,24 @@
       "emitted": false
     },
     {
+      "name": "images/chevron_down.svg",
+      "size": 941,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/chevron_up.svg",
+      "size": 837,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "list.module.js",
-      "size": 53154,
+      "size": 54717,
       "chunks": [
         "list"
       ],
@@ -50,26 +52,11 @@
         "list"
       ],
       "info": {},
-      "emitted": false
-    },
-    {
-      "name": "stm.3464ca2ea949a2ee792a.hot-update.js",
-      "size": 48891,
-      "chunks": [
-        "stm"
-      ],
-      "chunkNames": [
-        "stm"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "stm.module.js",
-      "size": 5649054,
+      "size": 5685957,
       "chunks": [
         "stm"
       ],
@@ -77,7 +64,8 @@
         "stm"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true,
+      "isOverSizeLimit": true
     }
   ],
   "filteredAssets": 0,
@@ -87,8 +75,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.3464ca2ea949a2ee792a.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -100,8 +87,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.3464ca2ea949a2ee792a.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}

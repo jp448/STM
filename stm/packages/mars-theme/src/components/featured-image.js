@@ -37,8 +37,8 @@ const Container = styled.div`
   margin-top: 16px;
   position: relative;
   @media (min-width: 100px) and (max-width: 576px) {
+    height: 300px !important;
     width: 100% !important;
-    height: auto !important;
   }
 `;
 
@@ -49,6 +49,10 @@ const StyledImage = styled.div`
   -o-object-fit: scale-down;
   object-fit: scale-down;
   overflow: hidden;
+  @media (min-width: 100px) and (max-width: 576px) {
+    height: 300px !important;
+    width: 100% !important;
+  }
 `;
 
 const Layer = styled.div`
@@ -57,6 +61,10 @@ const Layer = styled.div`
   left: 0;
   ${StyledImage}:hover & {
     background-color: rgba(230,230,230,0.7);
+  }
+  @media (min-width: 100px) and (max-width: 576px) {
+    height: 300px !important;
+    width: 500px !important;
   }
 `;
 
