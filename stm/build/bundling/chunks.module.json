@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "c0308902fdd06c1019ff",
+  "hash": "4bbe05acc21d8d7d4536",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
@@ -44,7 +44,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 54717,
+      "size": 47281,
       "chunks": [
         "list"
       ],

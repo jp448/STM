@@ -20,13 +20,11 @@ const FeaturedImage = ({ state, id, title, large }) => {
   const width = media_selected.width;
 
   return (
-    <Container style={{height: height, width: width}} >
+    <Container>
         <StyledImage
-          style={{backgroundImage: `url(${media_selected.source_url})`, height: height, width: width}}
-        >
-        <Layer style={{height: height, width: width}}></Layer>
+          src={media_selected.source_url} height={height} width={width} alt="test" 
+        />
         <Text>{title}</Text>
-        </StyledImage>
     </Container>
   );
 };
@@ -36,35 +34,17 @@ export default connect(FeaturedImage);
 const Container = styled.div`
   margin-top: 16px;
   position: relative;
-  @media (min-width: 100px) and (max-width: 576px) {
-    height: 300px !important;
-    width: 100% !important;
-  }
 `;
 
-const StyledImage = styled.div`
-  position: absolute;
-  background-size: contain;
-  background-repeat: no-repeat;
-  -o-object-fit: scale-down;
-  object-fit: scale-down;
-  overflow: hidden;
-  @media (min-width: 100px) and (max-width: 576px) {
-    height: 300px !important;
-    width: 100% !important;
-  }
-`;
-
-const Layer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  ${StyledImage}:hover & {
-    background-color: rgba(230,230,230,0.7);
+const StyledImage = styled.img`
+  ${Container}:hover & {
+    opacity: 0.4;
   }
   @media (min-width: 100px) and (max-width: 576px) {
-    height: 300px !important;
-    width: 500px !important;
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    display: block;
   }
 `;
 
@@ -74,7 +54,7 @@ const Text = styled.div`
   position: absolute;
   font-family: 'Cutive Mono', monospace;
   visibility: hidden;
-  ${StyledImage}:hover & {
+  ${Container}:hover & {
     visibility: visible;
     opacity: 1;
   }
