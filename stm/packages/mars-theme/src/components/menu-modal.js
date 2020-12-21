@@ -5,28 +5,30 @@ import Link from "./link";
 const MenuModal = ({ state }) => {
   const { menu } = state.theme;
   const isThereLinks = menu != null && menu.length > 0;
-
+  console.log(menu);
+  console.log(isThereLinks);
   return (
     <>
       <MenuOverlay />
       <MenuContent as="nav">
         {isThereLinks &&
-          menu.map(([name, link]) => (
-            <MenuLink
-              key={name}
-              link={link}
-              aria-current={state.router.link === link ? "page" : undefined}
+          menu.map((e, idx) => {
+            return (<MenuLink
+              key={e.name}
+              link={e.link}
+              aria-current={state.router.link === e.link ? "page" : undefined}
             >
-              {name}
-            </MenuLink>
-          ))}
+              {e.name}
+            </MenuLink>)
+          })
+        }
       </MenuContent>
     </>
   );
 };
 
 const MenuOverlay = styled.div`
-  background-color: #1f38c5;
+  background-color: #fff;
   width: 100vw;
   height: 100vh;
   overflow: hidden auto;
@@ -54,9 +56,9 @@ const MenuLink = styled(Link)`
   }
   /* styles for active link */
   &[aria-current="page"] {
-    color: yellow;
+    color: black;
     font-weight: bold;
-    /* border-bottom: 4px solid yellow; */
+    /* border-bottom: 4px solid black; */
   }
 `;
 

@@ -47,7 +47,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   @media (min-width: 100px) and (max-width: 576px) {
-    margin-top: 200px;
+    margin-top: 70px;
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 0;

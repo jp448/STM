@@ -1,7 +1,6 @@
 import React from "react";
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
-import Pagination from "./pagination";
 
 function shuffleArray(array) {
   let i = array.length - 1;
@@ -35,19 +34,12 @@ const List = ({ state }) => {
     <Container>
       {/* If the list is a taxonomy, we render a title. */}
 
-      {/* If the list is for a specific author, we render a title. */}
-      {data.isAuthor && (
-        <Header>
-          Author: <b>{decode(state.source.author[data.id].name)}</b>
-        </Header>
-      )}
       {projects.map(({ type, id }) => {
         const item = state.source[type][id];
         iterator += 1;
         // Render one Item component for each one.
         return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
        })}
-      <Pagination />
     </Container>
   );
 };
@@ -64,11 +56,7 @@ const Container = styled.section`
   @media (min-width: 100px) and (max-width: 576px) {
     display: flex;
     flex-wrap: wrap;
+    padding: 0px;
+    margin-top: 60px;
   }
-`;
-
-const Header = styled.h3`
-  font-weight: 300;
-  text-transform: capitalize;
-  color: rgba(12, 17, 43, 0.9);
 `;

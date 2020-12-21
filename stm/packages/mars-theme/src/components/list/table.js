@@ -121,6 +121,14 @@ const Container = styled.div`
 const TableElement = styled.table`
     border-collapse: collapse;
     width: 100%;
+    @media (min-width: 100px) and (max-width: 576px) {
+        td:not(:nth-child(1)) {
+          display: none;
+        }
+        th:not(:nth-child(1)) {
+            display: none;
+          }
+    }
 `;
 
 const TableHead = styled.thead`
@@ -166,6 +174,9 @@ const TableDataWithHover = styled(TableData)`
     cursor: pointer;
     ${TableRow}:hover & {
         color: #050401;
+        font-weight: bold;
+    }
+    @media (min-width: 100px) and (max-width: 576px) {
         font-weight: bold;
     }
 `;

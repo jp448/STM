@@ -10,19 +10,11 @@ import Link from "./link";
 const Nav = ({ state, actions }) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
-  const [menuIdx, setMenuIdx] = useState(0);
-  const [menuPadding, setMenuPadding] = useState("0px");
-
-  const submenu = useRef(null);
 
   function toggleNavBar(id) {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
       setActive === "active" ? "0px" : "30px"
-    );
-    setMenuIdx(id);
-    setMenuPadding(
-      (id*85) + 'px'
     );
   }
 
@@ -53,7 +45,6 @@ const Nav = ({ state, actions }) => {
     const submenuItems = []
     state.theme.menu[id].menu.map(e => {
       submenuItems.push(<NavItem key={e.name}>
-        {/* If link url is the current page, add `aria-current` for a11y */}
         <Link link={e.link} aria-current={state.router.link === e.link ? "page" : undefined}>
           {e.name}</Link>
       </NavItem>)
@@ -63,20 +54,19 @@ const Nav = ({ state, actions }) => {
   
   const menuItems = []
   state.theme.menu.map((e, idx) => {
+    // if with submenu get submenu
+    const submenuList = generateSubMenu(idx);
     menuItems.push(<NavItem key={e.name}>
-      {/* If link url is the current page, add `aria-current` for a11y */}
       { e.menu.length === 0 ? <NavLink href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-        {e.name}</NavLink> : <NavLink arria-current="page" onClick={() => toggleNavBar(idx)}>{e.name}</NavLink> }   
+        {e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar(idx)}>{e.name}</NavLink><NavSub
+        style={{ maxHeight: `${setHeight}`}}
+      >{submenuList}</NavSub></> }   
     </NavItem>)
   })
 
   return (
     <NavContainer>
-      <NavTop>{menuItems}</NavTop>
-      <NavBottom
-        ref={submenu}
-        style={{ maxHeight: `${setHeight}`, paddingLeft: `${menuPadding}`  }}
-      >{generateSubMenu(menuIdx)}</NavBottom>
+      {menuItems}    
     </NavContainer>
   );
 };
@@ -85,17 +75,11 @@ export default connect(Nav);
 
 const NavContainer = styled.nav`
   z-index: 10;
-`;
-
-const NavTop = styled.div`
-  list-style: none;
-  display: flex;
+  list-style-type: none;
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
   padding: 0 24px;
   margin: 0;
-  overflow-x: auto;
   left: 0;
   position: fixed;
   background-color: #fff;
@@ -107,31 +91,28 @@ const NavTop = styled.div`
 
 const NavLink = styled.a`
   cursor: pointer;
+  display: inline-block;
 `;
 
-const NavBottom = styled.div`
+const NavSub = styled.div`
   background-color: white;
-  overflow: hidden;
   transition: max-height 0.6s ease;
-  display: flex;
   list-style: none;
-  width: 848px;
-  max-width: 100%;
+  min-width: 600px;
   margin: 0;
-  padding: 0 24px;
   overflow-x: auto;
   top: 30px;
-  left: 15%;
-  position: fixed;
+  position: absolute;
+  z-index: 15;
 `;
 
 const NavItem = styled.div`
   padding: 0;
+  float: left;
   margin: 0 16px;
   color: #050401;
   font-size: 0.9em;
   box-sizing: border-box;
-  flex-shrink: 0;
   -moz-box-sizing: border-box;
   position: relative;
 

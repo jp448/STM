@@ -22,7 +22,7 @@ const FeaturedImage = ({ state, id, title, large }) => {
   return (
     <Container>
         <StyledImage
-          src={media_selected.source_url} height={height} width={width} alt="test" 
+          src={media_selected.source_url} width={width} alt="test" 
         />
         <Text>{title}</Text>
     </Container>
@@ -37,6 +37,10 @@ const Container = styled.div`
 `;
 
 const StyledImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
   ${Container}:hover & {
     opacity: 0.4;
   }
@@ -56,7 +60,10 @@ const Text = styled.div`
   visibility: hidden;
   ${Container}:hover & {
     visibility: visible;
-    opacity: 1;
+  }
+  @media (min-width: 100px) and (max-width: 576px) {
+    bottom: -24px;
+    visibility: visible;
   }
 `;
 

@@ -31,7 +31,7 @@ const MenuToggle = styled.button`
   top: 24px;
   background: transparent;
   border: 0;
-  color: white;
+  color: black;
   z-index: 5;
   height: 40px;
   width: 40px;

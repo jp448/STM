@@ -15,13 +15,15 @@ const Item = ({ state, item, large }) => {
 
   const Article = styled.article`
     @media (min-width: 576px) {
-      padding-top: ${Math.floor(Math.random()*200+(10))}px;
-      padding-bottom: ${Math.floor(Math.random()*100+(10))}px;
-      padding-left: ${Math.floor(Math.random()*20+(10))}px;
-      padding-right: ${Math.floor(Math.random()*20+(10))}px;
+      padding-top: ${Math.floor(Math.random()*50+(10))}px;
+      padding-bottom: ${Math.floor(Math.random()*50+(10))}px;
+      padding-left: ${Math.floor(Math.random()*20)}px;
+      padding-right: ${Math.floor(Math.random()*20)}px;
+      max-width: ${large? 60 : 30}%;
     }
     @media (min-width: 100px) and (max-width: 576px) {
       padding: 0;
+      margin-bottom: 35px;
     }
   `;
   // const Article = styled.article`
@@ -38,6 +40,5 @@ const Item = ({ state, item, large }) => {
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
-
 
 

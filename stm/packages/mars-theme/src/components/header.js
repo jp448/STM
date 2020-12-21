@@ -7,6 +7,7 @@ import MobileMenu from "./menu";
 const Header = ({ state }) => {
   return (
     <>
+      <MobileMenu />
       <Nav />
     </>
   );
