@@ -28,7 +28,7 @@ const Item = ({ state, item, large }) => {
   `;
   // const Article = styled.article`
   // `;
-    console.log(item);
+
   return (
     <Article>
       <Link link={item.link}>
