@@ -7,7 +7,14 @@ function Accordion(props) {
   const [height, setHeightWindow] = useState(typeof window === "undefined" ? 0 : window.innerHeight);
 
   useEffect(() => {
-    const handleWindowResize = () => setHeightWindow(window.innerHeight)
+    const handleWindowResize = () => {
+      setHeightWindow(window.innerHeight);
+      if (setActive) {
+        setHeightState(
+          setActive === "active" ? "0px" : `${content.current.scrollHeight > height - title.current.scrollHeight ? height - title.current.scrollHeight : content.current.scrollHeight}px`
+        );
+      }
+    }
     window.addEventListener("resize", handleWindowResize);
 
     // Return a function from the effect that removes the event listener
@@ -18,6 +25,7 @@ function Accordion(props) {
   const title = useRef(null);
 
   function toggleAccordion() {
+    if (typeof window !== "undefined") setHeightWindow(window.innerHeight);
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
       setActive === "active" ? "0px" : `${content.current.scrollHeight > height - title.current.scrollHeight ? height - title.current.scrollHeight : content.current.scrollHeight}px`
@@ -46,6 +54,7 @@ export default Accordion;
 const AccordionSection = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  left: 0;
 `;
 
 const AccordionStyle = styled.button`

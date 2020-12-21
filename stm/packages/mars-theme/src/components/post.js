@@ -4,6 +4,7 @@ import Link from "./link";
 import List from "./list";
 import PostGallery from "./post-gallery";
 import InfoContainer from "./info-container";
+import ImageList from "./image-list";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -28,7 +29,8 @@ const Post = ({ state, actions, libraries }) => {
     <Container>
       {/* Look at the settings to see if we should include the featured image */}
       {state.theme.featured.showOnPost && (
-        <PostGalleryStyled images={post.acf.gallery} />
+        <><PostGalleryStyled images={post.acf.gallery} />
+        <ImageList images={post.acf.gallery} /></>
       )}
       <InfoContainerStyled post={post} />
     </Container>
@@ -38,11 +40,16 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post);
 
 const Container = styled.div`
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  @media (min-width: 100px) and (max-width: 576px) {
+    position: relative;
+  }
+  @media (min-width: 577px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 `;
 
 const PostGalleryStyled = styled(PostGallery)`
@@ -50,6 +57,6 @@ const PostGalleryStyled = styled(PostGallery)`
 `;
 
 const InfoContainerStyled = styled(InfoContainer)`
-  z-index: 10;
+  z-index: 50;
 `;
 

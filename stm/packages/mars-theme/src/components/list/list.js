@@ -3,6 +3,7 @@ import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 
 function shuffleArray(array) {
+  // only shuffle in client side to prevent images not matching item description
   if (typeof window !== 'undefined') {
     let i = array.length - 1;
     for (; i > 0; i--) {
