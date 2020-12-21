@@ -1,16 +1,26 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { styled } from "frontity";
 
 function Accordion(props) {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
+  const [height, setHeightWindow] = useState(typeof window === "undefined" ? 0 : window.innerHeight);
+
+  useEffect(() => {
+    const handleWindowResize = () => setHeightWindow(window.innerHeight)
+    window.addEventListener("resize", handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   const content = useRef(null);
+  const title = useRef(null);
 
   function toggleAccordion() {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
-      setActive === "active" ? "0px" : `${content.current.scrollHeight}px`
+      setActive === "active" ? "0px" : `${content.current.scrollHeight > height - title.current.scrollHeight ? height - title.current.scrollHeight : content.current.scrollHeight}px`
     );
   }
 
@@ -24,7 +34,7 @@ function Accordion(props) {
             {props.content}
         </AccordionText> 
       </AccordionContent>  
-      <AccordionStyle onClick={toggleAccordion}>
+      <AccordionStyle ref={title} onClick={toggleAccordion}>
         <AccordionTitle>{props.title}<i class="fas fa-sort-up"></i></AccordionTitle>
       </AccordionStyle>
     </AccordionSection>
@@ -64,7 +74,8 @@ const AccordionTitle = styled.p`
 
 const AccordionContent = styled.div`
   background-color: white;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   transition: max-height 0.6s ease;
 `;
 

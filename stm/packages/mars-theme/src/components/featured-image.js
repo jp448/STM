@@ -16,7 +16,7 @@ const FeaturedImage = ({ state, id, title, large }) => {
     }
   }
 
-  const height = media_selected.height;
+  //const height = media_selected.height;
   const width = media_selected.width;
 
   return (

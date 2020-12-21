@@ -1,0 +1,144 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "d82c1f43854030c650a6",
+  "publicPath": "/static/",
+  "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
+  "assetsByChunkName": {
+    "list": "list.module.js",
+    "stm": [
+      "stm.module.js",
+      "stm.16539571a75f0b25820d.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "16539571a75f0b25820d.hot-update.json",
+      "size": 45,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/arrow-left.svg",
+      "size": 1000,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/arrow-right.svg",
+      "size": 1086,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/chevron_down.svg",
+      "size": 941,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/chevron_up.svg",
+      "size": 837,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 34401,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "stm.16539571a75f0b25820d.hot-update.js",
+      "size": 8669,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "stm.module.js",
+      "size": 5686975,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js",
+        "stm.16539571a75f0b25820d.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "stm": {
+      "chunks": [
+        "stm"
+      ],
+      "assets": [
+        "stm.module.js",
+        "stm.16539571a75f0b25820d.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
