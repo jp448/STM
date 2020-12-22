@@ -16,18 +16,20 @@ const Banner = ({ state, actions, onClick }) => {
 export default connect(Banner);
 
 const Container = styled.div`
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
 `;
 
 const Title = styled.h1`
-    margin-top: 10rem;
-    text-align: center;
     color: #AA9039;
     font-size: 20rem;
     font-family: 'Krona One', sans-serif;
     cursor: pointer;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
+    @media (min-width: 100px) and (max-width: 800px) {
+      font-size: 10rem;
+  }
 `;

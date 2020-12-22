@@ -11,7 +11,7 @@ const Nav = ({ state, actions }) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
 
-  function toggleNavBar(id) {
+  function toggleNavBar() {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
       setActive === "active" ? "0px" : "30px"
@@ -58,7 +58,7 @@ const Nav = ({ state, actions }) => {
     const submenuList = generateSubMenu(idx);
     menuItems.push(<NavItem key={e.name}>
       { e.menu.length === 0 ? <NavLink href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-        {e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar(idx)}>{e.name}</NavLink><NavSub
+        {e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar()}>{e.name}</NavLink><NavSub
         style={{ maxHeight: `${setHeight}`}}
       >{submenuList}</NavSub></> }   
     </NavItem>)

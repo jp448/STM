@@ -67,6 +67,7 @@ const AccordionStyle = styled.button`
     border: none;
     outline: none;
     transition: background-color 0.6s ease;
+    margin: 0px;
     &:hover {
         background-color: #fff;
     }

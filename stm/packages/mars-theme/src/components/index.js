@@ -20,7 +20,7 @@ const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
 
-  const [showIntro, setIntroState] = useState(false);
+  const [showIntro, setIntroState] = useState(true);
 
   function parseURLParams(link) {
     let paramsMap = {};

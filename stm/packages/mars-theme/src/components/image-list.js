@@ -46,4 +46,5 @@ const ImageStyled = styled.img`
   max-height: 100%;
   max-width: 100%;
   padding-bottom: 20px;
+  display: block;
 `;
