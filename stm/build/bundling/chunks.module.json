@@ -2,28 +2,14 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "5c49ee2233103655fe07",
+  "hash": "72772986f0c461147900",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": [
-      "stm.module.js",
-      "stm.8f1c37d06426d3fa5bb0.hot-update.js"
-    ]
+    "stm": "stm.module.js"
   },
   "assets": [
-    {
-      "name": "8f1c37d06426d3fa5bb0.hot-update.json",
-      "size": 45,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -58,7 +44,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 34824,
+      "size": 35122,
       "chunks": [
         "list"
       ],
@@ -66,26 +52,11 @@
         "list"
       ],
       "info": {},
-      "emitted": false
-    },
-    {
-      "name": "stm.8f1c37d06426d3fa5bb0.hot-update.js",
-      "size": 13710,
-      "chunks": [
-        "stm"
-      ],
-      "chunkNames": [
-        "stm"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
       "emitted": false
     },
     {
       "name": "stm.module.js",
-      "size": 5721709,
+      "size": 5717381,
       "chunks": [
         "stm"
       ],
@@ -93,7 +64,8 @@
         "stm"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true,
+      "isOverSizeLimit": true
     }
   ],
   "filteredAssets": 0,
@@ -103,8 +75,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.8f1c37d06426d3fa5bb0.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -116,8 +87,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.8f1c37d06426d3fa5bb0.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}

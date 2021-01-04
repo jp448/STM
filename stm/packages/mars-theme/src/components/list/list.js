@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, styled, decode } from "frontity";
+import { connect, styled } from "frontity";
 import Item from "./list-item";
 
 function shuffleArray(array) {

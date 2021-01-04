@@ -60,6 +60,8 @@ const MenuModal = ({ state, actions }) => {
   );
 };
 
+export default connect(MenuModal);
+
 const MenuOverlay = styled.div`
   background-color: #fff;
   width: 100vw;
@@ -102,5 +104,3 @@ const MenuLink = styled.a`
 const SubMenuLink = styled(MenuLink)`
   font-size: 15px;
 `;
-
-export default connect(MenuModal);

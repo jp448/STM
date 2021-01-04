@@ -32,7 +32,7 @@ const Item = ({ state, item, large }) => {
   return (
     <Article>
       <Link link={item.link}>
-        <FeaturedImage id={item.featured_media} title={item.title.rendered} large={large} />
+        <FeaturedImage key={item.featured_media} id={item.featured_media} title={item.title.rendered} large={large} />
       </Link>
     </Article>
   );

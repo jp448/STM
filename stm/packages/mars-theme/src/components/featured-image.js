@@ -22,7 +22,7 @@ const FeaturedImage = ({ state, id, title, large }) => {
   return (
     <Container>
         <StyledImage
-          src={media_selected.source_url} width={width} alt="test" 
+          src={media_selected.source_url} width={width} alt="test" key={media_selected.id}
         />
         <Text>{title}</Text>
     </Container>

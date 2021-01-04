@@ -25,6 +25,8 @@ function MobileMenu({ state, actions }) {
   );
 }
 
+export default connect(MobileMenu);
+
 const MenuToggle = styled.button`
   position: absolute;
   right: 24px;
@@ -43,5 +45,3 @@ const MenuToggle = styled.button`
     justify-content: center;
   }
 `;
-
-export default connect(MobileMenu);

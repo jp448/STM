@@ -9,10 +9,6 @@ const InfoContainer = ({ state, actions, post, libraries }) => {
   
   const ProjectTitle = <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />;
 
-  console.log("hi");
-  console.log(post.acf.year);
-  console.log(post.acf.location);
-
   const ContentAccordion = <div>
     <p>Project info</p>
     {(post.acf.year === undefined || post.acf.year === "") ? "" : <p>jahr: {post.acf.year}</p>}

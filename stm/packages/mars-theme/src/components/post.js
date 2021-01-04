@@ -12,8 +12,6 @@ const Post = ({ state, actions, libraries }) => {
   // Get the data of the post.
   const post = state.source[data.type][data.id];
 
-  console.log(data.type);
-
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits

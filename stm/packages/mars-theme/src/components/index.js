@@ -19,8 +19,9 @@ import Banner from "./banner.js";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-
-  const [showIntro, setIntroState] = useState(true);
+  
+  /** turn off stm first page (false) turn on stm first page (true) */
+  const [showIntro, setIntroState] = useState(false);
 
   function parseURLParams(link) {
     let paramsMap = {};
@@ -100,7 +101,6 @@ const globalStyles = css`
     text-decoration: none;
   }
 `;
-
 
 const HeadContainer = styled.div`
   display: flex;

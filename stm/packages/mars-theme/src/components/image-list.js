@@ -12,6 +12,7 @@ const ImageList = ({ state, actions, images }) => {
         className="d-block w-100"
         alt={images[index].alt}
         src={images[index].sizes.gallery ? images[index].sizes.gallery : images[index].url}
+        key={images[index].id}
       />)
   }
 

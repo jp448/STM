@@ -49,9 +49,9 @@ const Table = ({ state, items }) => {
       if (selectedHeader === element) {
         const idx = tableheaders.indexOf(selectedHeader);
         const chevron = sortingState[idx] ?  chevronUp : chevronDown; 
-        headerdata.push(<TableHeader onClick={() => clickHeader(element)}>{element}<Chevron src={chevron} /></TableHeader>);
+        headerdata.push(<TableHeader onClick={() => clickHeader(element)}>{element}<Chevron src={chevron} key={idx}/></TableHeader>);
       } else {
-        headerdata.push(<TableHeader onClick={() => clickHeader(element)}>{element}</TableHeader>);
+        headerdata.push(<TableHeader onClick={() => clickHeader(element)} key={element}>{element}</TableHeader>);
       }
   })
 
@@ -60,7 +60,7 @@ const Table = ({ state, items }) => {
     tableitems = sortItems(tableitems, selectedHeader, sortingState[idx]);
   }
 
-  const getTableElement = (content, hasImages) => {
+  const getTableElement = (content, hasImages, keydata) => {
     return hasImages ? <TableDataWithHover>{content}</TableDataWithHover> : <TableData>{content}</TableData>;
   }
   
@@ -74,20 +74,20 @@ const Table = ({ state, items }) => {
     } else if (item.acf.gallery.length > 0) {
         hasHover = true;
     } 
-    tabledata.push(<TableRow style={hasImage} onClick={() => clickRow(idx)}>
-        {getTableElement(item.title.rendered, hasHover)}
-        {getTableElement(item.acf.year, hasHover)}
-        {getTableElement(item.acf.location, hasHover)}
-        {getTableElement(item.acf.program, hasHover)}
-        {getTableElement(item.acf.description, hasHover)}
-        {getTableElement(item.acf.competition, hasHover)}
-        {getTableElement(item.acf.built ? "x" : "", hasHover)}
+    tabledata.push(<TableRow style={hasImage} key={idx} onClick={() => clickRow(idx)}>
+        {getTableElement(item.title.rendered, hasHover, idx*tableheaders.length + 0)}
+        {getTableElement(item.acf.year, hasHover, idx*tableheaders.length + 1)}
+        {getTableElement(item.acf.location, hasHover, idx*tableheaders.length + 2)}
+        {getTableElement(item.acf.program, hasHover, idx*tableheaders.length + 3)}
+        {getTableElement(item.acf.description, hasHover, idx*tableheaders.length + 4)}
+        {getTableElement(item.acf.competition, hasHover, idx*tableheaders.length + 5)}
+        {getTableElement(item.acf.built ? "x" : "", hasHover, idx*tableheaders.length + 6)}
     </TableRow>);
     if (idx === rowClicked && item.acf.gallery.length > 0) {
         let images =  [];
         item.acf.gallery.forEach(image => {
             images.push(<Link link={item.link}>
-                    <ProjectImage src={image.sizes.thumbnail} alt={image.description} />
+                    <ProjectImage src={image.sizes.thumbnail} alt={image.description} key={image.id} />
                 </Link>);
         });
         tabledata.push(<TableRow><TableData colSpan='7'>{images}</TableData></TableRow>);
@@ -122,10 +122,10 @@ const TableElement = styled.table`
     border-collapse: collapse;
     width: 100%;
     @media (min-width: 100px) and (max-width: 576px) {
-        td:not(:nth-child(1)) {
+        td:not(:nth-of-type(1)) {
           display: none;
         }
-        th:not(:nth-child(1)) {
+        th:not(:nth-of-type(1)) {
             display: none;
           }
     }

@@ -43,7 +43,7 @@ function Accordion(props) {
         </AccordionText> 
       </AccordionContent>  
       <AccordionStyle ref={title} onClick={toggleAccordion}>
-        <AccordionTitle>{props.title}<i class="fas fa-sort-up"></i></AccordionTitle>
+        <AccordionTitle>{props.title}<i className="fas fa-sort-up"></i></AccordionTitle>
       </AccordionStyle>
     </AccordionSection>
   );
@@ -76,7 +76,7 @@ const AccordionStyle = styled.button`
     }
 `;
 
-const AccordionTitle = styled.p`
+const AccordionTitle = styled.div`
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 14px;

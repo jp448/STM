@@ -11,7 +11,7 @@ const PostGallery = ({ state, actions, images }) => {
 
   for (const [index, value] of images.entries()) {
     items.push(
-    <SlideStyled index={index}>
+    <SlideStyled index={index} key={index}>
       <ImageStyled
         className="d-block w-100"
         alt={images[index].alt}
