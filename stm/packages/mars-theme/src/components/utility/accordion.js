@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { styled } from "frontity";
 
+//accordian is toggled when user clicks on the title in the project post page. 
+
 function Accordion(props) {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");

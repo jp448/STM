@@ -2,6 +2,9 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Accordion from "./utility/accordion";
 
+//Info Container is opened when user clicks on the accordian component. Info container contains information about the project
+//such as year, location, programm
+
 const InfoContainer = ({ state, actions, post, libraries }) => {
 
   // Get the html2react component.

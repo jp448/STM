@@ -1,4 +1,4 @@
-import React, { useState, useRef }  from "react";
+import React, { useState }  from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 
@@ -7,6 +7,7 @@ import Link from "./link";
  *
  * It renders the navigation links
  */
+
 const Nav = ({ state, actions }) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");

@@ -6,13 +6,14 @@ import FeaturedImage from "../featured-image";
 /**
  * Item Component
  *
- * It renders the preview of a blog post. Each blog post contains
- * - Title: clickable title of the post
- * - Author: name of author and published date
- * - FeaturedMedia: the featured image/video of the post
+ * It renders the preview of a post. Each post contains
+ * - Title: title of the post (when hovered over)
+ * - FeaturedMedia: the featured image of the post
  */
+
 const Item = ({ state, item, large }) => {
 
+  /** Creates the random padding on each post to makes the posts look different on each render */
   const Article = styled.article`
     @media (min-width: 576px) {
       padding-top: ${Math.floor(Math.random()*50+(10))}px;
@@ -26,8 +27,6 @@ const Item = ({ state, item, large }) => {
       margin-bottom: 35px;
     }
   `;
-  // const Article = styled.article`
-  // `;
 
   return (
     <Article>
@@ -40,5 +39,3 @@ const Item = ({ state, item, large }) => {
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
-
-

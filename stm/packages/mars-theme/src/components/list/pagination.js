@@ -10,6 +10,7 @@ import Link from "../link";
  * The `state`, `actions`, `libraries` props are provided by the global context,
  * when we wrap this component in `connect(...)`
  */
+
 const Pagination = ({ state, actions }) => {
   // Get the total posts to be displayed based for the current link
   const { next, previous } = state.source.get(state.router.link);
@@ -44,6 +45,7 @@ const Pagination = ({ state, actions }) => {
  * Connect Pagination to global context to give it access to
  * `state`, `actions`, `libraries` via props
  */
+
 export default connect(Pagination);
 
 const Text = styled.em`

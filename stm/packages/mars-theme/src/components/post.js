@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "./link";
 import List from "./list";
 import PostGallery from "./post-gallery";
 import InfoContainer from "./info-container";
@@ -25,7 +24,7 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container>
-      {/* Look at the settings to see if we should include the featured image */}
+      {/* show project gallery */}
       {state.theme.featured.showOnPost && (
         <><PostGalleryStyled images={post.acf.gallery} />
         <ImageList images={post.acf.gallery} /></>
@@ -57,4 +56,3 @@ const PostGalleryStyled = styled(PostGallery)`
 const InfoContainerStyled = styled(InfoContainer)`
   z-index: 50;
 `;
-

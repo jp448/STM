@@ -2,14 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "72772986f0c461147900",
+  "hash": "e4e4d9956bc53dffdcef",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": "stm.module.js"
+    "stm": [
+      "stm.module.js",
+      "stm.583ff40b622f258ca5ec.hot-update.js"
+    ]
   },
   "assets": [
+    {
+      "name": "583ff40b622f258ca5ec.hot-update.json",
+      "size": 45,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -44,7 +58,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 35122,
+      "size": 35144,
       "chunks": [
         "list"
       ],
@@ -55,8 +69,23 @@
       "emitted": false
     },
     {
+      "name": "stm.583ff40b622f258ca5ec.hot-update.js",
+      "size": 28105,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "stm.module.js",
-      "size": 5717381,
+      "size": 5688332,
       "chunks": [
         "stm"
       ],
@@ -64,8 +93,7 @@
         "stm"
       ],
       "info": {},
-      "emitted": true,
-      "isOverSizeLimit": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,
@@ -75,7 +103,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.583ff40b622f258ca5ec.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -87,7 +116,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.583ff40b622f258ca5ec.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "./link";
 import List from "./list";
 
 const Page = ({ state, actions, libraries }) => {
@@ -8,11 +7,6 @@ const Page = ({ state, actions, libraries }) => {
   const data = state.source.get(state.router.link);
   // Get the data of the post.
   const post = state.source[data.type][data.id];
-  // Get the data of the author.
-  const author = state.source.author[post.author];
-  // Get a human readable date.
-  const date = new Date(post.date);
-
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
@@ -21,6 +15,7 @@ const Page = ({ state, actions, libraries }) => {
    * home posts and the list component so if the user visits
    * the home page, everything is ready and it loads instantly.
    */
+
   useEffect(() => {
     actions.source.fetch("/");
     List.preload();
@@ -31,23 +26,6 @@ const Page = ({ state, actions, libraries }) => {
     <Container>
       <div>
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-
-        {/* Only display author and date on posts */}
-        {data.isPost && (
-          <div>
-            {author && (
-              <StyledLink link={author.link}>
-                <Author>
-                  By <b>{author.name}</b>
-                </Author>
-              </StyledLink>
-            )}
-            <DateWrapper>
-              {" "}
-              on <b>{date.toDateString()}</b>
-            </DateWrapper>
-          </div>
-        )}
       </div>
 
       {/* Render the content using the Html2React component so the HTML is processed
@@ -71,22 +49,6 @@ const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 8px;
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
-const Author = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
-`;
-
-const DateWrapper = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
 `;
 
 /**
@@ -131,11 +93,6 @@ blockquote {
   background-color: rgba(0, 0, 0, 0.1);
   border-left: 4px solid rgba(12, 17, 43);
   padding: 4px 16px;
-}
-
-a {
-  color: rgb(31, 56, 197);
-  text-decoration: underline;
 }
 
 /* Input fields styles */

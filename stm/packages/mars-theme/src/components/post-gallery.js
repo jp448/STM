@@ -4,6 +4,7 @@ import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-re
 import arrowLeft from "./../img/arrow-left.svg";
 import arrowRight from "./../img/arrow-right.svg";
 
+//Renders the carousel on each project page that displays the projects images 
 const PostGallery = ({ state, actions, images }) => {
   if (!images) return null // exception handling if no ids are given
 
@@ -98,7 +99,6 @@ const ButtonNextStyled = styled(ButtonNext)`
 `;
 
 const SliderStyled = styled(Slider)`
-  
 `;
 
 const SlideStyled = styled(Slide)`

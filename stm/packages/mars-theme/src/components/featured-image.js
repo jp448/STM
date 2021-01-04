@@ -1,6 +1,8 @@
 import React from "react";
 import { connect, styled } from "frontity";
 
+// FeaturedImage is the image show on the stm page 
+
 const FeaturedImage = ({ state, id, title, large }) => {
   const media = state.source.attachment[id];
 
@@ -16,7 +18,6 @@ const FeaturedImage = ({ state, id, title, large }) => {
     }
   }
 
-  //const height = media_selected.height;
   const width = media_selected.width;
 
   return (
@@ -66,4 +67,3 @@ const Text = styled.div`
     visibility: visible;
   }
 `;
-

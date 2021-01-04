@@ -1,6 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 
+//The Banner is the first page the user lands on with on stm in large print- the user clicks on stm and enters the site
 
 const Banner = ({ state, actions, onClick }) => {
 

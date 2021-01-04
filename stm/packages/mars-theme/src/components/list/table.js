@@ -6,15 +6,15 @@ import chevronDown from "./../../img/chevron_down.svg";
 import chevronUp from "./../../img/chevron_up.svg";
 
 /**
- * Item Component
+ * Table Component
  *
- * It renders the preview of a blog post. Each blog post contains
- * - Title: clickable title of the post
- * - Author: name of author and published date
- * - FeaturedMedia: the featured image/video of the post
+ * It renders the table. The table contains
+ * - Table headers: the info given for each project (year built etc), are clickable to sort data
+ * - Table body: is filled with table rows
+ * - Table rows: each row is a project, is clickable and then the images are shown
  */
-const Table = ({ state, items }) => {
 
+const Table = ({ state, items }) => {
   const data = state.source.get(state.router.link);
   const [sortingState, setSortingState] = useState([false, false, false, false, false, false, false]);
   const [selectedHeader, setSelectedHeader] = useState('');
@@ -60,7 +60,7 @@ const Table = ({ state, items }) => {
     tableitems = sortItems(tableitems, selectedHeader, sortingState[idx]);
   }
 
-  const getTableElement = (content, hasImages, keydata) => {
+  const getTableElement = (content, hasImages) => {
     return hasImages ? <TableDataWithHover>{content}</TableDataWithHover> : <TableData>{content}</TableData>;
   }
   
@@ -68,21 +68,24 @@ const Table = ({ state, items }) => {
   {tableitems.map((item, idx) => {
     let hasImage = {}
     let hasHover = false;
+
     if (idx === rowClicked && item.acf.gallery.length > 0) {
         hasImage = {fontWeight: "bold", color: "#050401"}
         hasHover = true;
     } else if (item.acf.gallery.length > 0) {
         hasHover = true;
-    } 
+    }
+
     tabledata.push(<TableRow style={hasImage} key={idx} onClick={() => clickRow(idx)}>
-        {getTableElement(item.title.rendered, hasHover, idx*tableheaders.length + 0)}
-        {getTableElement(item.acf.year, hasHover, idx*tableheaders.length + 1)}
-        {getTableElement(item.acf.location, hasHover, idx*tableheaders.length + 2)}
-        {getTableElement(item.acf.program, hasHover, idx*tableheaders.length + 3)}
-        {getTableElement(item.acf.description, hasHover, idx*tableheaders.length + 4)}
-        {getTableElement(item.acf.competition, hasHover, idx*tableheaders.length + 5)}
-        {getTableElement(item.acf.built ? "x" : "", hasHover, idx*tableheaders.length + 6)}
+        {getTableElement(item.title.rendered, hasHover)}
+        {getTableElement(item.acf.year, hasHover)}
+        {getTableElement(item.acf.location, hasHover)}
+        {getTableElement(item.acf.program, hasHover)}
+        {getTableElement(item.acf.description, hasHover)}
+        {getTableElement(item.acf.competition, hasHover)}
+        {getTableElement(item.acf.built ? "x" : "", hasHover)}
     </TableRow>);
+
     if (idx === rowClicked && item.acf.gallery.length > 0) {
         let images =  [];
         item.acf.gallery.forEach(image => {
@@ -110,7 +113,6 @@ const Table = ({ state, items }) => {
   );
 };
 
-// Connect the Item to gain access to `state` as a prop
 export default connect(Table);
 
 const Container = styled.div`
@@ -190,8 +192,3 @@ const Chevron = styled.img`
 const ProjectImage = styled.img`
     padding: 5px;
 `;
-
-
-
-
-
