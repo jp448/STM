@@ -2,19 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "f491dabdbdd2e2a3641c",
+  "hash": "5c49ee2233103655fe07",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
     "stm": [
       "stm.module.js",
-      "stm.15dfd76845f7d0393cae.hot-update.js"
+      "stm.8f1c37d06426d3fa5bb0.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "15dfd76845f7d0393cae.hot-update.json",
+      "name": "8f1c37d06426d3fa5bb0.hot-update.json",
       "size": 45,
       "chunks": [],
       "chunkNames": [],
@@ -69,8 +69,8 @@
       "emitted": false
     },
     {
-      "name": "stm.15dfd76845f7d0393cae.hot-update.js",
-      "size": 33451,
+      "name": "stm.8f1c37d06426d3fa5bb0.hot-update.js",
+      "size": 13710,
       "chunks": [
         "stm"
       ],
@@ -85,7 +85,7 @@
     },
     {
       "name": "stm.module.js",
-      "size": 5719452,
+      "size": 5721709,
       "chunks": [
         "stm"
       ],
@@ -104,7 +104,7 @@
       ],
       "assets": [
         "stm.module.js",
-        "stm.15dfd76845f7d0393cae.hot-update.js"
+        "stm.8f1c37d06426d3fa5bb0.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -117,7 +117,7 @@
       ],
       "assets": [
         "stm.module.js",
-        "stm.15dfd76845f7d0393cae.hot-update.js"
+        "stm.8f1c37d06426d3fa5bb0.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
