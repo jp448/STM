@@ -44,6 +44,6 @@ const Title = styled.h1`
   margin: 0;
   color: rgba(12, 17, 43);
   font-size: 1rem !important;
-  text-align: center !important;
+  text-align: left !important;
   text-decoration: none !important;
 `;

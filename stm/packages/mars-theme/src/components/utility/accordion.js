@@ -27,6 +27,7 @@ function Accordion(props) {
   const title = useRef(null);
 
   function toggleAccordion() {
+    console.log('hi');
     if (typeof window !== "undefined") setHeightWindow(window.innerHeight);
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
