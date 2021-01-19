@@ -6,9 +6,9 @@ import FeaturedImage from "../featured-image";
 /**
  * Item Component
  *
- * It renders the preview of a post. Each post contains
- * - Title: title of the post (when hovered over)
- * - FeaturedMedia: the featured image of the post
+ * It renders the preview of a project. Each project contains
+ * - Title: title of the project (when hovered over)
+ * - FeaturedMedia: the featured image of the project
  */
 
 const Item = ({ state, item, large }) => {
