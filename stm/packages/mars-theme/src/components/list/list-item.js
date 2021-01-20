@@ -18,9 +18,12 @@ const Item = ({ state, item, large }) => {
     @media (min-width: 576px) {
       padding-top: ${Math.floor(Math.random()*50+(10))}px;
       padding-bottom: ${Math.floor(Math.random()*50+(10))}px;
-      padding-left: ${Math.floor(Math.random()*20)}px;
-      padding-right: ${Math.floor(Math.random()*20)}px;
-      max-width: ${large? 60 : 30}%;
+      padding-left: ${Math.floor(Math.random()*10)}px;
+      padding-right: ${Math.floor(Math.random()*10)}px;
+      max-width: ${large? 60 : 30}vw;
+      min-width: ${large? 55 : 25}vw;
+      margin-left: 5px;
+      margin-right: 5px;
     }
     @media (min-width: 100px) and (max-width: 576px) {
       padding: 0;

@@ -20,7 +20,7 @@ const FeaturedImage = ({ state, id, title, large }) => {
       }
     }
   }
-
+  media_selected = media;
   const width = media_selected.width;
   
   return (
