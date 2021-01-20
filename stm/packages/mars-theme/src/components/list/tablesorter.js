@@ -56,6 +56,34 @@ export function sortItems(tableitems, header, direction) {
             tableitems.sort((a, b) => (getData(a.title.rendered)  < getData(b.title.rendered) ) ? 1 : -1);
         }
         break;
+    case 'auftraggeber':
+        if (direction) {
+            tableitems.sort((a, b) => (getData(a.acf.client) > getData(b.acf.client) ) ? 1 : -1);
+        } else {
+            tableitems.sort((a, b) => (getData(a.acf.client)  < getData(b.acf.client) ) ? 1 : -1);
+        }
+    break;
+    case 'verfahren':
+        if (direction) {
+            tableitems.sort((a, b) => (getData(a.acf.procedure) > getData(b.acf.procedure) ) ? 1 : -1);
+        } else {
+            tableitems.sort((a, b) => (getData(a.acf.procedure)  < getData(b.acf.procedure) ) ? 1 : -1);
+        }
+        break;
+    case 'leistung':
+        if (direction) {
+            tableitems.sort((a, b) => (getData(a.acf.achievement) > getData(b.acf.achievement) ) ? 1 : -1);
+        } else {
+            tableitems.sort((a, b) => (getData(a.acf.achievement)  < getData(b.acf.achievement) ) ? 1 : -1);
+        }
+        break;
+    case 'umfang':
+        if (direction) {
+            tableitems.sort((a, b) => (getData(a.acf.scope) > getData(b.acf.scope) ) ? 1 : -1);
+        } else {
+            tableitems.sort((a, b) => (getData(a.acf.scope)  < getData(b.acf.scope) ) ? 1 : -1);
+        }
+        break;
   }
 
   return tableitems;      

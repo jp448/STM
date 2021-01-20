@@ -16,9 +16,17 @@ import chevronUp from "./../../img/chevron_up.svg";
 
 const Table = ({ state, items }) => {
   const data = state.source.get(state.router.link);
-  const [sortingState, setSortingState] = useState([false, false, false, false, false, false, false]);
   const [selectedHeader, setSelectedHeader] = useState('');
   const [rowClicked, setRowClicked] = useState(-1);
+
+  let tableheaders = [];
+  state.theme.menu.forEach(element =>  { 
+      if (element.link === data.link) {
+        tableheaders = element.tableheaders;
+      } 
+   });
+
+  const [sortingState, setSortingState] = useState(new Array(tableheaders.length).fill(false));
 
   let tableitems = []; // create an item array
   // lets get the item info out of the ids
@@ -26,11 +34,9 @@ const Table = ({ state, items }) => {
     tableitems.push(state.source[type][id]);
    });
 
-  const tableheaders = ["projekt", "jahr", "ort", "programm", "inhalt", "wettbewerb", "gebaut"]; 
-
   const clickHeader = (header) => {
     setSelectedHeader(header);
-    const idx = tableheaders.indexOf(header);
+    const idx = tableheaders.findIndex(obj => { return obj.name === header });
     let copyState = [...sortingState];
     copyState[idx] = !copyState[idx];
     setSortingState(copyState);
@@ -46,24 +52,32 @@ const Table = ({ state, items }) => {
 
   let headerdata = [];
   tableheaders.forEach((element) => {
-      if (selectedHeader === element) {
-        const idx = tableheaders.indexOf(selectedHeader);
+      if (selectedHeader === element.name) {
+        const idx = tableheaders.findIndex(obj => { return obj.name === selectedHeader });
         const chevron = sortingState[idx] ?  chevronUp : chevronDown; 
-        headerdata.push(<TableHeader onClick={() => clickHeader(element)}>{element}<Chevron src={chevron} key={idx}/></TableHeader>);
+        headerdata.push(<TableHeader onClick={() => clickHeader(element.name)}>{element.name}<Chevron src={chevron} key={idx}/></TableHeader>);
       } else {
-        headerdata.push(<TableHeader onClick={() => clickHeader(element)} key={element}>{element}</TableHeader>);
+        headerdata.push(<TableHeader onClick={() => clickHeader(element.name)} key={element.name}>{element.name}</TableHeader>);
       }
   })
 
   if (selectedHeader.length !== 0) {
-    const idx = tableheaders.indexOf(selectedHeader);
+    const idx = tableheaders.findIndex(obj => { return obj.name === selectedHeader });
     tableitems = sortItems(tableitems, selectedHeader, sortingState[idx]);
   }
 
   const getTableElement = (content, hasImages) => {
-    return hasImages ? <TableDataWithHover>{content}</TableDataWithHover> : <TableData>{content}</TableData>;
+    return hasImages ? <TableDataWithHover>{formatField(content)}</TableDataWithHover> : <TableData>{formatField(content)}</TableData>;
   }
-  
+
+  const formatField = (content) => {
+      if (typeof content === "boolean") {
+          return content ? 'x' : '';
+      } else {
+          return content;
+      }
+  }
+
   let tabledata = [];
   {tableitems.map((item, idx) => {
     let hasImage = {}
@@ -76,15 +90,14 @@ const Table = ({ state, items }) => {
         hasHover = true;
     }
 
-    tabledata.push(<TableRow style={hasImage} key={idx} onClick={() => clickRow(idx)}>
-        {getTableElement(item.title.rendered, hasHover)}
-        {getTableElement(item.acf.year, hasHover)}
-        {getTableElement(item.acf.location, hasHover)}
-        {getTableElement(item.acf.program, hasHover)}
-        {getTableElement(item.acf.description, hasHover)}
-        {getTableElement(item.acf.competition, hasHover)}
-        {getTableElement(item.acf.built ? "x" : "", hasHover)}
-    </TableRow>);
+    let row_content = [];
+    tableheaders.forEach(obj => {
+        row_content.push(getTableElement(item[obj.path][obj.resource], hasHover))
+    });
+
+        tabledata.push(<TableRow style={hasImage} key={idx} onClick={() => clickRow(idx)}>
+        {row_content}
+        </TableRow>);
 
     if (idx === rowClicked && item.acf.gallery.length > 0) {
         let images =  [];

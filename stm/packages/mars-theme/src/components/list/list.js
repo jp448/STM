@@ -51,7 +51,8 @@ export default connect(List);
 
 const Container = styled.section`
   margin: 0;
-  padding: 24px;
+  margin-top: 50px;
+  padding: 15px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

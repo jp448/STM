@@ -2,14 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "19a492c7d49dc3d1ce6f",
+  "hash": "a7693b92aea8ec125976",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
-    "list": "list.module.js",
+    "list": [
+      "list.module.js",
+      "list.526c5a37b59f9e1ff6e8.hot-update.js"
+    ],
     "stm": "stm.module.js"
   },
   "assets": [
+    {
+      "name": "526c5a37b59f9e1ff6e8.hot-update.json",
+      "size": 46,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -43,8 +57,23 @@
       "emitted": false
     },
     {
+      "name": "list.526c5a37b59f9e1ff6e8.hot-update.js",
+      "size": 10943,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "list.module.js",
-      "size": 35918,
+      "size": 35989,
       "chunks": [
         "list"
       ],
@@ -52,11 +81,11 @@
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "stm.module.js",
-      "size": 5689221,
+      "size": 5696883,
       "chunks": [
         "stm"
       ],
@@ -64,8 +93,7 @@
         "stm"
       ],
       "info": {},
-      "emitted": true,
-      "isOverSizeLimit": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,
@@ -97,7 +125,8 @@
         "list"
       ],
       "assets": [
-        "list.module.js"
+        "list.module.js",
+        "list.526c5a37b59f9e1ff6e8.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

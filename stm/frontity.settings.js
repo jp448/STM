@@ -21,11 +21,69 @@ const settings = {
             {
               "name": "projekte",
               "link": "/category/projects/?type=list",
+              "tableheaders": [ {
+                  "name": "projekt",
+                  "path": 'title',
+                  "resource": 'rendered'
+                }, {
+                  "name": "jahr",
+                  "path": 'acf',
+                  "resource": 'year'
+                }, {
+                  "name": "ort",
+                  "path": 'acf',
+                  "resource": 'location'
+                }, {
+                  "name": "programm",
+                  "path": 'acf',
+                  "resource": 'program'
+                }, {
+                  "name": "inhalt",
+                  "path": 'acf',
+                  "resource": 'description'
+                }, {
+                  "name": "wettbewerb",
+                  "path": 'acf',
+                  "resource": 'competition'
+                }, {
+                  "name": "gebaut",
+                  "path": 'acf',
+                  "resource": 'built'
+                } ],
               "menu": []
             },
             {
               "name": "betreuungen",
               "link": "/category/competitions/?type=list",
+              "tableheaders": [ {
+                "name": "projekt",
+                "path": 'title',
+                "resource": 'rendered'
+              }, {
+                "name": "jahr",
+                "path": 'acf',
+                "resource": 'year'
+              }, {
+                "name": "ort",
+                "path": 'acf',
+                "resource": 'location'
+              }, {
+                "name": "auftraggeber",
+                "path": 'acf',
+                "resource": 'client'
+              }, {
+                "name": "verfahren",
+                "path": 'acf',
+                "resource": 'procedure'
+              }, {
+                "name": "leistung",
+                "path": 'acf',
+                "resource": 'achievement'
+              }, {
+                "name": "umfang",
+                "path": 'acf',
+                "resource": 'scope'
+              } ],
               "menu": []
             },
             {
