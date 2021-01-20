@@ -53,12 +53,19 @@ const Container = styled.div`
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  // Smallest device
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
-  @media (min-width: 768px) {
-    margin-top: 200px;
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+    margin-top: 6vw;
   }
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    margin-top: 3vw;
+  }
+  // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
     width: 100%;
     margin-top: 20px;
@@ -85,6 +92,9 @@ const ButtonBackStyled = styled(ButtonBack)`
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
+  @media (min-width: 576px) and (max-width: 768px) {
+    display: none;
+  }
   &:disabled {
     display: none;
   }
@@ -106,7 +116,7 @@ const ButtonNextStyled = styled(ButtonNext)`
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
-  @media (min-width: 768px) and (max-width: 992px) {
+  @media (min-width: 576px) and (max-width: 768px){
     display: none;
   }
   &:disabled {
@@ -125,8 +135,11 @@ const ButtonExitStyled = styled.div`
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
+  @media (min-width: 576px) {
+    width: 1.5rem;
+  }
   @media (min-width: 768px) and (max-width: 992px) {
-    display: none;
+    width: 1.5rem;
   }
 `;
 

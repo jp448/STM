@@ -21,12 +21,12 @@ const FeaturedImage = ({ state, id, title, large }) => {
     }
   }
   media_selected = media;
-  const width = media_selected.width;
+  const img_width = media_selected.width;
   
   return (
     <Container>
         <StyledImage
-          src={media_selected.source_url} width={width} alt="test" key={media_selected.id}
+          src={media_selected.source_url} width={img_width} alt="test" key={media_selected.id}
         />
         <Text>{title}</Text>
     </Container>
@@ -38,6 +38,7 @@ export default connect(FeaturedImage);
 const Container = styled.div`
   margin-top: 16px;
   position: relative;
+  display: inline-block;
 `;
 
 const StyledImage = styled.img`

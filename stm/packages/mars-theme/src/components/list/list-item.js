@@ -22,8 +22,8 @@ const Item = ({ state, item, large }) => {
       padding-right: ${Math.floor(Math.random()*10)}px;
       max-width: ${large? 60 : 30}vw;
       min-width: ${large? 55 : 25}vw;
-      margin-left: 5px;
-      margin-right: 5px;
+      margin-left: 10px;
+      margin-left: 10px;
     }
     @media (min-width: 100px) and (max-width: 576px) {
       padding: 0;
@@ -42,3 +42,7 @@ const Item = ({ state, item, large }) => {
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
+
+const CenterContainer = styled.div`
+
+`;
