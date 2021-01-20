@@ -33,8 +33,8 @@ const PostGallery = ({ state, actions, images }) => {
           <SliderStyled>
             {items}
           </SliderStyled>
-          <ButtonBackStyled><img src={arrowLeft} /></ButtonBackStyled>
-          <ButtonNextStyled><img src={arrowRight} /></ButtonNextStyled>
+          <ButtonBackStyled></ButtonBackStyled>
+          <ButtonNextStyled></ButtonNextStyled>
         </GalleryContainer>
       </CarouselProvider>
     </Container>
@@ -64,13 +64,18 @@ const GalleryContainer = styled.div`
 `;
 
 const ButtonBackStyled = styled(ButtonBack)`
-  width: 45px;
-  left: 50px;
+  width: 50vw;
+  left: 0;
+  height: 80vh;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 3vh;
   background: transparent;
   border: none;
+  z-index: 0;
+  cursor: url(${arrowLeft}), auto;
+  &:focus {
+    outline:0;
+  }
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
@@ -80,13 +85,18 @@ const ButtonBackStyled = styled(ButtonBack)`
 `;
 
 const ButtonNextStyled = styled(ButtonNext)`
-  width: 45px;
-  right: 50px;
+  width: 50vw;
+  right: 0;
+  height: 80vh;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 3vh;
+  cursor: url(${arrowRight}), auto;
   background: transparent;
   border: none;
+  z-index: 0;
+  &:focus {
+    outline:0;
+  }
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }

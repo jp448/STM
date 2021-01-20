@@ -112,7 +112,7 @@ const NavItem = styled.div`
   float: left;
   margin: 0 16px;
   color: #050401;
-  font-size: 0.9em;
+  font-size: 1em;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   position: relative;

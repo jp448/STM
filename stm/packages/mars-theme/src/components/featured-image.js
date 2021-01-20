@@ -9,17 +9,20 @@ const FeaturedImage = ({ state, id, title, large }) => {
   if (!media) return null;
 
   let media_selected = media.media_details.sizes.home_small;
-  
-  if (large) {
-    media_selected = media.media_details.sizes.home_large;
-    if (!media_selected) {
-      // If an image is smaller than the size to be generated it fails to be generated. Hence fallback!
-      media_selected = media.media_details.sizes.home_small;
+  if (media.mime_type === 'image/gif') {
+    media_selected = media;
+  } else {
+    if (large) {
+      media_selected = media.media_details.sizes.home_large;
+      if (!media_selected) {
+        // If an image is smaller than the size to be generated it fails to be generated. Hence fallback!
+        media_selected = media.media_details.sizes.home_small;
+      }
     }
   }
 
   const width = media_selected.width;
-
+  
   return (
     <Container>
         <StyledImage
