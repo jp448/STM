@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import arrowLeft from "./../img/arrow-left.svg";
 import arrowRight from "./../img/arrow-right.svg";
+import exit from "./../img/exit.svg";
 
 //Renders the carousel on each project page that displays the projects images 
 const PostGallery = ({ state, actions, images }) => {
@@ -20,10 +21,14 @@ const PostGallery = ({ state, actions, images }) => {
       />
     </SlideStyled>)
   }
+  console.log(state.router);
+  const clickExit = (e) => {
+    window.history.back();
+    };
 
   return (
     <Container>
-        <CarouselProvider
+      <CarouselProvider
         naturalSlideWidth={800}
         naturalSlideHeight={350}
         totalSlides={items.length}
@@ -37,6 +42,7 @@ const PostGallery = ({ state, actions, images }) => {
           <ButtonNextStyled></ButtonNextStyled>
         </GalleryContainer>
       </CarouselProvider>
+      <ButtonExitStyled onClick={clickExit}><img src={exit}/></ButtonExitStyled>
     </Container>
   );
 };
@@ -55,7 +61,7 @@ const Container = styled.div`
   }
   @media (min-width: 992px) {
     width: 100%;
-    margin-top: 35px;
+    margin-top: 20px;
   }
 `;
 
@@ -107,6 +113,23 @@ const ButtonNextStyled = styled(ButtonNext)`
     display: none;
   }
 `;
+const ButtonExitStyled = styled.div`
+  width: 2rem;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (min-width: 100px) and (max-width: 576px) {
+    display: none;
+  }
+  @media (min-width: 768px) and (max-width: 992px) {
+    display: none;
+  }
+`;
+
 
 const SliderStyled = styled(Slider)`
 `;

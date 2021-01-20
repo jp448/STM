@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect, styled } from "frontity";
 import Item from "./list-item";
 
 function shuffleArray(array) {
   // only shuffle in client side to prevent images not matching item description
-  if (typeof window !== 'undefined') {
     let i = array.length - 1;
     for (; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -12,7 +11,6 @@ function shuffleArray(array) {
       array[i] = array[j];
       array[j] = temp;
     }
-  }
   return array;
 }
 
@@ -20,7 +18,11 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
 
-  let projects = shuffleArray([...data.items]);
+  const [projects, setProjects] = useState(data.items);
+
+  useEffect(() => {
+    setProjects(shuffleArray([...projects]));
+  }, []);
 
   let sizeArray = [false];
   let toggle = true;

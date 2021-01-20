@@ -4,11 +4,11 @@ import Nav from "./nav";
 import MobileMenu from "./menu";
 
 //Header shows either the nav bar or the moblie nav menu 
-const Header = ({ state }) => {
+const Header = ({ state, action, display_nav }) => {
   return (
     <>
       <MobileMenu />
-      <Nav />
+      {display_nav ? <Nav /> : ''}
     </>
   );
 };

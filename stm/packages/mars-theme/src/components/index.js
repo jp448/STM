@@ -39,7 +39,6 @@ const Theme = ({ state }) => {
   }
 
   const urlParams = parseURLParams(state.router.link);
-
   let content = [];
   if (showIntro) {
     content = <Main><Banner onClick= {setIntroState} /></Main>;
@@ -47,7 +46,10 @@ const Theme = ({ state }) => {
     content = 
             <>
               <HeadContainer>
-                <Header />
+                <Switch>
+                  <Header when={data.isPost} display_nav={false} />
+                  <Header display_nav={true} />
+                </Switch>
               </HeadContainer>
 
               {/* Add the main section. It renders a different component depending
