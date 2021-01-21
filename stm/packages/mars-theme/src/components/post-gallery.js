@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { connect, styled } from "frontity";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import arrowLeft from "./../img/arrow-left.svg";
@@ -8,6 +8,27 @@ import exit from "./../img/exit.svg";
 //Renders the carousel on each project page that displays the projects images 
 const PostGallery = ({ state, actions, images }) => {
   if (!images) return null // exception handling if no ids are given
+
+
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    
+    window.addEventListener("resize", handleResize);
+    
+    handleResize();
+    
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const items = []
 
@@ -25,12 +46,12 @@ const PostGallery = ({ state, actions, images }) => {
   const clickExit = (e) => {
     window.history.back();
     };
-
+console.log(windowSize);
   return (
     <Container>
       <CarouselProvider
-        naturalSlideWidth={800}
-        naturalSlideHeight={350}
+        naturalSlideWidth={windowSize.width !== undefined ? windowSize.width : 800}
+        naturalSlideHeight={windowSize.height !== undefined ? windowSize.height : 350}
         totalSlides={items.length}
         infinite={false}
       >
@@ -50,25 +71,27 @@ const PostGallery = ({ state, actions, images }) => {
 export default connect(PostGallery);
 
 const Container = styled.div`
+  margin: 0;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   // Smallest device
   @media (min-width: 100px) and (max-width: 576px) {
     display: none;
   }
   // Small devices (landscape phones, 576px and up)
   @media (min-width: 576px) {
-    margin-top: 6vw;
+    margin-top: 0;
   }
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
-    margin-top: 3vw;
+    margin-top: 0;
   }
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
   }
 `;
 
@@ -79,7 +102,7 @@ const GalleryContainer = styled.div`
 const ButtonBackStyled = styled(ButtonBack)`
   width: 50vw;
   left: 0;
-  height: 80vh;
+  height: 100%;
   position: absolute;
   top: 3vh;
   background: transparent;
@@ -103,7 +126,7 @@ const ButtonBackStyled = styled(ButtonBack)`
 const ButtonNextStyled = styled(ButtonNext)`
   width: 50vw;
   right: 0;
-  height: 80vh;
+  height: 100%;
   position: absolute;
   top: 3vh;
   cursor: url(${arrowRight}), auto;
@@ -125,9 +148,13 @@ const ButtonNextStyled = styled(ButtonNext)`
 `;
 const ButtonExitStyled = styled.div`
   width: 2rem;
-  position: absolute;
-  top: 0;
-  right: 50px;
+  position: fixed;
+  top: 30px;
+  right: -8px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   border: none;
   &:hover {
     cursor: pointer;

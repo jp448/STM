@@ -129,7 +129,10 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com/wp-json/"
+          "api": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com/wp-json/",
+          "params": {
+            "per_page": 100
+          }
         }
       }
     },

@@ -37,6 +37,7 @@ const Post = ({ state, actions, libraries }) => {
 export default connect(Post);
 
 const Container = styled.div`
+  margin-bottom: 54px;
   @media (min-width: 100px) and (max-width: 576px) {
     position: relative;
   }
