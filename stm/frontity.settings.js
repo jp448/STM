@@ -16,6 +16,7 @@ const settings = {
             {
               "name": "stm",
               "link": "/category/home",
+              'icon': 'exit',
               "menu": []
             },
             {

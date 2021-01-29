@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
+import exit from "./../img/exit.svg";
 
 /**
  * Navigation Component
@@ -59,7 +60,7 @@ const Nav = ({ state, actions }) => {
     const submenuList = generateSubMenu(idx);
     menuItems.push(<NavItem key={e.name}>
       { e.menu.length === 0 ? <NavLink href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-        {e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar()}>{e.name}</NavLink><NavSub
+        {e.icon !== undefined ? <img src={exit} width="50px" height= "50px"/> : e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar()}>{e.icon !== undefined ? <img src={exit} width="50px" height= "50px" /> : e.name}</NavLink><NavSub
         style={{ maxHeight: `${setHeight}`}}
       >{submenuList}</NavSub></> }   
     </NavItem>)

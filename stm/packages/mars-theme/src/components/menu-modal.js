@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { styled, connect } from "frontity";
+import exit from "./../img/exit.svg";
 
 const MenuModal = ({ state, actions }) => {
 
@@ -45,7 +46,7 @@ const MenuModal = ({ state, actions }) => {
     const submenuList = generateSubMenu(idx);
     menuList.push(
       e.menu.length === 0 ? <MenuLink key={e.name} href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-      {e.name}</MenuLink> : <><MenuLink key={e.name} arria-current="page" onClick={() => showSubMenu(e.id)}>{e.name}</MenuLink><NavSub 
+      {e.icon !== undefined ? <img src={exit}/> : e.name}</MenuLink> : <><MenuLink key={e.name} arria-current="page" onClick={() => showSubMenu(e.id)}>{e.icon !== undefined ? <img src={exit}/> : e.name}</MenuLink><NavSub 
       style={{display: e.id === openSubMenu ? `inline` : `none`}}>{submenuList}</NavSub></>
     );
   });    
