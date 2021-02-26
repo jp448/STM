@@ -16,7 +16,7 @@ const Nav = ({ state, actions }) => {
   function toggleNavBar() {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
-      setActive === "active" ? "0px" : "30px"
+      setActive === "active" ? "0px" : "50px"
     );
   }
 
@@ -59,10 +59,35 @@ const Nav = ({ state, actions }) => {
     // if with submenu get submenu
     const submenuList = generateSubMenu(idx);
     menuItems.push(<NavItem key={e.name}>
-      { e.menu.length === 0 ? <NavLink href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-        {e.icon !== undefined ? <img src={exit} width="50px" height= "50px"/> : e.name}</NavLink> : <><NavLink arria-current="page" onClick={() => toggleNavBar()}>{e.icon !== undefined ? <img src={exit} width="50px" height= "50px" /> : e.name}</NavLink><NavSub
-        style={{ maxHeight: `${setHeight}`}}
-      >{submenuList}</NavSub></> }   
+      { e.menu.length === 0 ? 
+        <NavLink 
+          href={e.link}
+          onClick={(event) => onClick(event, e.link)} 
+          aria-current={state.router.link === e.link ? "page" : undefined}>
+            {e.icon !== undefined ? 
+              <>
+              <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px"/>
+              {e.name !== "stm" ?
+              <ToolTipText>{e.name}</ToolTipText> :
+              ""}
+              </> : 
+              e.name}
+        </NavLink> 
+        :<>
+        <NavLink 
+          arria-current="page" 
+          onClick={() => toggleNavBar()}>
+            {e.icon !== undefined ? 
+              <>
+                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                <ToolTipText>{e.name}</ToolTipText>
+              </> : e.name}
+        </NavLink>
+        <NavSub
+          style={{ maxHeight: `${setHeight}`}}>
+            {submenuList}
+        </NavSub>
+      </> }   
     </NavItem>)
   })
 
@@ -79,14 +104,33 @@ const NavContainer = styled.nav`
   z-index: 10;
   list-style-type: none;
   width: 100%;
+  height: 127px;
   box-sizing: border-box;
   padding: 0 24px;
   margin: 0;
   left: 0;
   position: fixed;
   background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
   @media screen and (max-width: 560px) {
+    display: none;
+  }
+`;
+
+const ToolTipText = styled.span`
+  visibility: hidden;
+  color: #AD8C26;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  font-weight: lighter;
+  font-size: 11px;
+  padding: 10px;
+
+  @media screen and (max-width: 850px) {
     display: none;
   }
 `;
@@ -94,24 +138,17 @@ const NavContainer = styled.nav`
 const NavLink = styled.a`
   cursor: pointer;
   display: inline-block;
-`;
+  position: relative;
 
-const NavSub = styled.div`
-  background-color: white;
-  transition: max-height 0.6s ease;
-  list-style: none;
-  min-width: 600px;
-  margin: 0;
-  overflow-x: auto;
-  top: 30px;
-  position: absolute;
-  z-index: 15;
+  &:hover ${ToolTipText} {
+    visibility: visible;
+  }
 `;
 
 const NavItem = styled.div`
   padding: 0;
   float: left;
-  margin: 0 16px;
+  margin: 0 17px;
   color: #050401;
   font-size: 1em;
   box-sizing: border-box;
@@ -134,7 +171,7 @@ const NavItem = styled.div`
     height: 3px;
     bottom: 0;
     left: 0;
-    background: black;
+    background: #AD8C26;
     visibility: hidden;
     border-radius: 5px;
     transform: scaleX(0);
@@ -172,5 +209,24 @@ const NavItem = styled.div`
       content: "";
       display: inline-block;
     }
+  }
+`;
+
+const NavSub = styled.div`
+  background-color: white;
+  transition: max-height 0.6s ease;
+  list-style: none;
+  font-weight: lighter;
+  min-width: 600px;
+  margin: 0;
+  overflow-x: auto;
+  top: 60px;
+  left: 7px;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 15;
+
+  ${NavItem}:hover {
+    color: #AD8C26;
   }
 `;

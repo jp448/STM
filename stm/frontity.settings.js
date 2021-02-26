@@ -16,12 +16,13 @@ const settings = {
             {
               "name": "stm",
               "link": "/category/home",
-              'icon': 'exit',
+              'icon': 'logo',
               "menu": []
             },
             {
               "name": "projekte",
               "link": "/category/projects/?type=list",
+              'icon': 'project',
               "tableheaders": [ {
                   "name": "projekt",
                   "path": 'title',
@@ -56,6 +57,7 @@ const settings = {
             {
               "name": "betreuungen",
               "link": "/category/competitions/?type=list",
+              'icon': 'competition',
               "tableheaders": [ {
                 "name": "projekt",
                 "path": 'title',
@@ -90,6 +92,7 @@ const settings = {
             {
               "name": "info",
               "link": "/info",
+              'icon': 'info',
               "menu": [
                 {
                   "name": "profil",
@@ -114,8 +117,9 @@ const settings = {
               ]
             },
             {
-              "name": "aktuelles",
-              "link": "/aktuelles",
+              "name": "download",
+              "link": "/downloads",
+              'icon': 'download',
               "menu": []
             }
           ],

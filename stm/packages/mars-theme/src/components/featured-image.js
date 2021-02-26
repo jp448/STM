@@ -36,7 +36,6 @@ const FeaturedImage = ({ state, id, title, large }) => {
 export default connect(FeaturedImage);
 
 const Container = styled.div`
-  margin-top: 16px;
   position: relative;
   display: inline-block;
 `;

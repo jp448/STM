@@ -53,8 +53,8 @@ export default connect(List);
 
 const Container = styled.section`
   margin: 0;
-  margin-top: 50px;
-  padding: 15px;
+  margin-top: 150px;
+  padding: 15px 0px;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

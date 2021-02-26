@@ -41,7 +41,7 @@ export default connect(Page);
 
 const Container = styled.div`
   width: 800px;
-  margin: 80px 0 0 0;
+  margin: 150px 0 0 0;
   padding: 24px;
 `;
 

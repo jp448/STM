@@ -129,7 +129,7 @@ const Table = ({ state, items }) => {
 export default connect(Table);
 
 const Container = styled.div`
-    margin-top: 80px;
+    margin-top: 150px;
     width: 100%;
 `;
 

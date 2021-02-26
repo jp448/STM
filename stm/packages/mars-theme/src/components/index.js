@@ -10,6 +10,7 @@ import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
 import reactCarouselStyles from 'pure-react-carousel/dist/react-carousel.es.css';
+import wordpressPageElements from './../css/wordpressPageElements.css';
 import Banner from "./banner.js";
 
 /**
@@ -80,6 +81,7 @@ const Theme = ({ state }) => {
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={globalStyles} />
       <Global styles={reactCarouselStyles} />
+      <Global styles={wordpressPageElements} />
 
       {/* Add the header of the site. */}
       {content}

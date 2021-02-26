@@ -2,14 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "d4f08cf5ddb4c34d412d",
+  "hash": "f7610962f8a0af0694cb",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": "stm.module.js"
+    "stm": [
+      "stm.module.js",
+      "stm.a323bdc4841d1a2d7e43.hot-update.js"
+    ]
   },
   "assets": [
+    {
+      "name": "a323bdc4841d1a2d7e43.hot-update.json",
+      "size": 45,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -43,6 +57,22 @@
       "emitted": false
     },
     {
+      "name": "images/competition.png",
+      "size": 20369,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/download.png",
+      "size": 7866,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "images/exit.svg",
       "size": 1068,
       "chunks": [],
@@ -51,8 +81,32 @@
       "emitted": false
     },
     {
+      "name": "images/info.png",
+      "size": 23113,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/logo.png",
+      "size": 43725,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/project.png",
+      "size": 21910,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "list.module.js",
-      "size": 39887,
+      "size": 38497,
       "chunks": [
         "list"
       ],
@@ -63,8 +117,23 @@
       "emitted": false
     },
     {
+      "name": "stm.a323bdc4841d1a2d7e43.hot-update.js",
+      "size": 3619,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "stm.module.js",
-      "size": 5731224,
+      "size": 5781630,
       "chunks": [
         "stm"
       ],
@@ -82,7 +151,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.a323bdc4841d1a2d7e43.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -94,7 +164,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.a323bdc4841d1a2d7e43.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

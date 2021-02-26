@@ -45,9 +45,37 @@ const MenuModal = ({ state, actions }) => {
   isThereLinks && menu.map((e, idx) => {
     const submenuList = generateSubMenu(idx);
     menuList.push(
-      e.menu.length === 0 ? <MenuLink key={e.name} href={e.link} onClick={(event) => onClick(event, e.link)} aria-current={state.router.link === e.link ? "page" : undefined}>
-      {e.icon !== undefined ? <img src={exit}/> : e.name}</MenuLink> : <><MenuLink key={e.name} arria-current="page" onClick={() => showSubMenu(e.id)}>{e.icon !== undefined ? <img src={exit}/> : e.name}</MenuLink><NavSub 
-      style={{display: e.id === openSubMenu ? `inline` : `none`}}>{submenuList}</NavSub></>
+      e.menu.length === 0 ? 
+      <MenuLink 
+        key={e.name} 
+        href={e.link} 
+        onClick={(event) => onClick(event, e.link)} 
+        aria-current={state.router.link === e.link 
+        ? "page" : undefined}>
+            {e.icon !== undefined ? 
+              <ImageContent>
+                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                {e.name !== "stm" ?
+                  <ToolTipText>{e.name}</ToolTipText> :
+                ""}
+              </ImageContent> : e.name}
+        </MenuLink> : 
+        <>
+          <MenuLink 
+            key={e.name} 
+            arria-current="page" 
+            onClick={() => showSubMenu(e.id)}>
+              {e.icon !== undefined ? 
+              <ImageContent>
+                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                <ToolTipText>{e.name}</ToolTipText>
+              </ImageContent> : e.name}
+          </MenuLink>
+          <NavSub 
+            style={{display: e.id === openSubMenu ? `inline` : `none`}}>
+              {submenuList}
+          </NavSub>
+        </>
     );
   });    
 
@@ -72,14 +100,23 @@ const MenuOverlay = styled.div`
   z-index: 2;
   top: 0;
   left: 0;
+
+  @media screen and (min-width: 560px) {
+    display: none;
+  }
 `;
 
 const MenuContent = styled.div`
   z-index: 3;
+
+  @media screen and (min-width: 560px) {
+    display: none;
+  }
 `;
 
 const NavSub = styled.div`
-  color: gray;
+  color: #AD8C26;
+  font-weight: lighter;
 `;
 
 const MenuLink = styled.a`
@@ -88,20 +125,33 @@ const MenuLink = styled.a`
   outline: 0;
   font-size: 20px;
   text-align: center;
-  padding: 1.2rem 0;
+  padding: .8rem 0;
 
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0);
   }
   /* styles for active link */
   &[aria-current="page"] {
-    color: black;
-    font-weight: bold;
+    font-weight: 900;
     /* border-bottom: 4px solid black; */
   }
 `;
 
 const SubMenuLink = styled(MenuLink)`
   font-size: 15px;
+`;
+
+const ToolTipText = styled.p`
+  color: #AD8C26;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 11px;
+  padding: 10px;
+`;
+
+const ImageContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items; center;
 `;
