@@ -1,5 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
+import logo from "./../img/logo.png";
 
 //The Banner is the first page the user lands on with on stm in large print- the user clicks on stm and enters the site
 
@@ -7,7 +8,7 @@ const Banner = ({ state, actions, onClick }) => {
 
   return (
     <Container>
-      <Title onClick={() => onClick(false)}>stm°</Title>
+      <Title src={logo} onClick={() => onClick(false)} />
     </Container>
   );
 };
@@ -24,12 +25,11 @@ const Container = styled.div`
     height: 100vh;
 `;
 
-const Title = styled.h1`
-    color: #AA9039;
-    font-size: 20rem;
-    font-family: 'Krona One', sans-serif;
+const Title = styled.img`
     cursor: pointer;
-    @media (min-width: 100px) and (max-width: 800px) {
-      font-size: 10rem;
-  }
+    display: block;
+    max-width: 65%;
+    max-height: 65vh;
+    width: auto;
+    height: auto;
 `;

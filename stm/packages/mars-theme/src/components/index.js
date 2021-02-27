@@ -22,7 +22,7 @@ const Theme = ({ state }) => {
   const data = state.source.get(state.router.link);
   
   /** turn off stm first page (false) turn on stm first page (true) */
-  const [showIntro, setIntroState] = useState(false);
+  const [showIntro, setIntroState] = useState(true);
 
   function parseURLParams(link) {
     let paramsMap = {};

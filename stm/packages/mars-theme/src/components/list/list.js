@@ -17,6 +17,7 @@ function shuffleArray(array) {
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
+  console.log(data.items);
 
   const [projects, setProjects] = useState(data.items);
 
@@ -41,9 +42,14 @@ const List = ({ state }) => {
 
       {projects.map(({ type, id }) => {
         const item = state.source[type][id];
-        iterator += 1;
-        // Render one Item component for each one.
-        return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
+        // if no featured media then don't show it
+        if (item.featured_media !== 0) {
+          iterator += 1;
+          // Render one Item component for each one.
+          return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
+        } else {
+          return (<></>);
+        }
        })}
     </Container>
   );

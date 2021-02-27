@@ -1,7 +1,6 @@
 import React, { useState }  from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
-import exit from "./../img/exit.svg";
 
 /**
  * Navigation Component
