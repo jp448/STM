@@ -55,7 +55,7 @@ const Table = ({ state, items }) => {
       if (selectedHeader === element.name) {
         const idx = tableheaders.findIndex(obj => { return obj.name === selectedHeader });
         const chevron = sortingState[idx] ?  chevronUp : chevronDown; 
-        headerdata.push(<TableHeader onClick={() => clickHeader(element.name)}>{element.name}<Chevron src={chevron} key={idx}/></TableHeader>);
+        headerdata.push(<TableHeader onClick={() => clickHeader(element.name)}>{element.name}<Chevron src={chevron} key={element.name}/></TableHeader>);
       } else {
         headerdata.push(<TableHeader onClick={() => clickHeader(element.name)} key={element.name}>{element.name}</TableHeader>);
       }
@@ -66,8 +66,8 @@ const Table = ({ state, items }) => {
     tableitems = sortItems(tableitems, selectedHeader, sortingState[idx]);
   }
 
-  const getTableElement = (content, hasImages) => {
-    return hasImages ? <TableDataWithHover>{formatField(content)}</TableDataWithHover> : <TableData>{formatField(content)}</TableData>;
+  const getTableElement = (content, hasImages, idx) => {
+    return hasImages ? <TableDataWithHover key={idx} >{formatField(content)}</TableDataWithHover> : <TableData  key={idx} >{formatField(content)}</TableData>;
   }
 
   const formatField = (content) => {
@@ -91,8 +91,8 @@ const Table = ({ state, items }) => {
     }
 
     let row_content = [];
-    tableheaders.forEach(obj => {
-        row_content.push(getTableElement(item[obj.path][obj.resource], hasHover))
+    tableheaders.forEach((obj, idx) => {
+        row_content.push(getTableElement(item[obj.path][obj.resource], hasHover, idx))
     });
 
         tabledata.push(<TableRow style={hasImage} key={idx} onClick={() => clickRow(idx)}>
@@ -101,12 +101,12 @@ const Table = ({ state, items }) => {
 
     if (idx === rowClicked && item.acf.gallery.length > 0) {
         let images =  [];
-        item.acf.gallery.forEach(image => {
-            images.push(<Link link={item.link}>
+        item.acf.gallery.forEach((image, idx) => {
+            images.push(<Link key={idx} link={item.link}>
                     <ProjectImage src={image.sizes.thumbnail} alt={image.description} key={image.id} />
                 </Link>);
         });
-        tabledata.push(<TableRow><TableData colSpan='7'>{images}</TableData></TableRow>);
+        tabledata.push(<TableRow key='image_row' ><TableData key='image_data' colSpan='7'>{images}</TableData></TableRow>);
     }
   })}
 

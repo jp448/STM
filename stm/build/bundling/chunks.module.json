@@ -2,28 +2,14 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "2884d270033c9bd68647",
+  "hash": "a21b64e86f8d2329f5cc",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": [
-      "stm.module.js",
-      "stm.0a336cfd4887695ff15b.hot-update.js"
-    ]
+    "stm": "stm.module.js"
   },
   "assets": [
-    {
-      "name": "0a336cfd4887695ff15b.hot-update.json",
-      "size": 45,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -106,7 +92,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 39451,
+      "size": 39495,
       "chunks": [
         "list"
       ],
@@ -114,26 +100,11 @@
         "list"
       ],
       "info": {},
-      "emitted": false
-    },
-    {
-      "name": "stm.0a336cfd4887695ff15b.hot-update.js",
-      "size": 8478,
-      "chunks": [
-        "stm"
-      ],
-      "chunkNames": [
-        "stm"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
       "emitted": false
     },
     {
       "name": "stm.module.js",
-      "size": 5781192,
+      "size": 5780829,
       "chunks": [
         "stm"
       ],
@@ -141,7 +112,8 @@
         "stm"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true,
+      "isOverSizeLimit": true
     }
   ],
   "filteredAssets": 0,
@@ -151,8 +123,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.0a336cfd4887695ff15b.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -164,8 +135,7 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.0a336cfd4887695ff15b.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}

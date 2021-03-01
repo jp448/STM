@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { styled, connect } from "frontity";
-import exit from "./../img/exit.svg";
 
 const MenuModal = ({ state, actions }) => {
 
@@ -47,14 +46,14 @@ const MenuModal = ({ state, actions }) => {
     menuList.push(
       e.menu.length === 0 ? 
       <MenuLink 
-        key={e.name} 
+        key={idx} 
         href={e.link} 
         onClick={(event) => onClick(event, e.link)} 
         aria-current={state.router.link === e.link 
         ? "page" : undefined}>
             {e.icon !== undefined ? 
               <ImageContent>
-                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" key={e.name} />
                 {e.name !== "stm" ?
                   <ToolTipText>{e.name}</ToolTipText> :
                 ""}
@@ -62,12 +61,12 @@ const MenuModal = ({ state, actions }) => {
         </MenuLink> : 
         <>
           <MenuLink 
-            key={e.name} 
+            key={idx} 
             arria-current="page" 
             onClick={() => showSubMenu(e.id)}>
               {e.icon !== undefined ? 
               <ImageContent>
-                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" key={e.name} />
                 <ToolTipText>{e.name}</ToolTipText>
               </ImageContent> : e.name}
           </MenuLink>
@@ -81,8 +80,8 @@ const MenuModal = ({ state, actions }) => {
 
   return (
     <>
-      <MenuOverlay />
-      <MenuContent as="nav">
+      <MenuOverlay key='overlay' />
+      <MenuContent as="nav" key='nav'>
         {menuList}
       </MenuContent>
     </>

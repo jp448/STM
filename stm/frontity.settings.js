@@ -3,8 +3,8 @@ const settings = {
   "state": {
     "frontity": {
       "url": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com",
-      "title": "stm",
-      "description": "WordPress installation for Frontity development"
+      "title": "stm architekten",
+      "description": "Die Webseite des Architektenbüro stm architekten."
     }
   },
   "packages": [

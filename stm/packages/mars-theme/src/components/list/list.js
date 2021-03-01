@@ -17,7 +17,6 @@ function shuffleArray(array) {
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-  console.log(data.items);
 
   const [projects, setProjects] = useState(data.items);
 
@@ -37,7 +36,7 @@ const List = ({ state }) => {
   let iterator = -1;
 
   return (
-    <Container>
+    <Container key='post_list' >
       {/* If the list is a taxonomy, we render a title. */}
 
       {projects.map(({ type, id }) => {
@@ -47,8 +46,6 @@ const List = ({ state }) => {
           iterator += 1;
           // Render one Item component for each one.
           return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
-        } else {
-          return (<></>);
         }
        })}
     </Container>

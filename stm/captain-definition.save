@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "dockerfileLines": [
+    "FROM node:12-alpine",
+    "RUN mkdir -p usr/src/app",
+    "COPY . .",
+    "RUN npm install --only=production",
+    "RUN npx frontity build",
+    "EXPOSE 80",
+    "CMD [ \"sh\", \"-c\", \"npx frontity serve --port 80\" ]"
+  ]
+}

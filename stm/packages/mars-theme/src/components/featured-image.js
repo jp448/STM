@@ -24,9 +24,9 @@ const FeaturedImage = ({ state, id, title, large }) => {
   const img_width = media_selected.width;
   
   return (
-    <Container>
+    <Container key={media_selected.title.rendered} >
         <StyledImage
-          src={media_selected.source_url} width={img_width} alt="test" key={media_selected.id}
+          src={media_selected.source_url} width={img_width} alt={media_selected.alt_text} key={media_selected.id}
         />
         <Text>{title}</Text>
     </Container>

@@ -42,11 +42,11 @@ const PostGallery = ({ state, actions, images }) => {
       />
     </SlideStyled>)
   }
-  console.log(state.router);
+
   const clickExit = (e) => {
     window.history.back();
     };
-console.log(windowSize);
+
   return (
     <Container>
       <CarouselProvider
