@@ -2,7 +2,7 @@ const settings = {
   "name": "stm",
   "state": {
     "frontity": {
-      "url": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com",
+      "url": "http://stm-admin.stm-architekten.de",
       "title": "stm architekten",
       "description": "Die Webseite des Architektenbüro stm architekten."
     }
@@ -134,7 +134,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://wordpress.proctor-webworks.com.w01ac8b2.kasserver.com/wp-json/",
+          "api": "http://stm-admin.stm-architekten.de/wp-json/",
           "params": {
             "per_page": 100
           }
