@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
@@ -17,9 +17,19 @@ import Banner from "./banner.js";
  * Theme is the root React component of our theme. The one we will export
  * in roots.
  */
-const Theme = ({ state }) => {
+const Theme = ({ state, actions }) => {
+
+  useEffect(() => {
+    // if on homepage get content of frist menu link
+    if (state.router.link === "/") {
+      actions.router.set(state.theme.menu[0].link);
+      actions.source.fetch(state.theme.menu[0].link);
+    }
+  }, []);
+
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data);
   
   /** turn off stm first page (false) turn on stm first page (true) */
   const [showIntro, setIntroState] = useState(true);
