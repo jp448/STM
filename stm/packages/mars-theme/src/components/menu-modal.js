@@ -107,6 +107,7 @@ const MenuOverlay = styled.div`
 
 const MenuContent = styled.div`
   z-index: 3;
+  margin-top: 100px;
 
   @media screen and (min-width: 560px) {
     display: none;
@@ -120,7 +121,8 @@ const NavSub = styled.div`
 
 const MenuLink = styled.a`
   width: 100%;
-  display: inline-block;
+  display: flex;
+  justify-content: flex-start;
   outline: 0;
   font-size: 20px;
   text-align: center;
@@ -151,6 +153,6 @@ const ToolTipText = styled.p`
 
 const ImageContent = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items; center;
 `;

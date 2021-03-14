@@ -3,6 +3,8 @@ import { connect, styled } from "frontity";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import arrowLeft from "./../img/arrow-left.svg";
 import arrowRight from "./../img/arrow-right.svg";
+import arrowLeftpng from "./../img/arrows-left.png";
+import arrowRightpng from "./../img/arrows-right.png";
 import exit from "./../img/exit.svg";
 
 //Renders the carousel on each project page that displays the projects images 
@@ -108,7 +110,8 @@ const ButtonBackStyled = styled(ButtonBack)`
   background: transparent;
   border: none;
   z-index: 0;
-  cursor: url(${arrowLeft}), auto;
+  cursor: url(${arrowLeft}), url(${arrowLeftpng}), pointer;
+  cursor: -webkit-image-set(url(${arrowLeftpng})), pointer;
   &:focus {
     outline:0;
   }
@@ -129,7 +132,8 @@ const ButtonNextStyled = styled(ButtonNext)`
   height: 100%;
   position: absolute;
   top: 3vh;
-  cursor: url(${arrowRight}), auto;
+  cursor: url(${arrowRight}), url(${arrowRightpng}), pointer;
+  cursor: -webkit-image-set(url(${arrowRightpng})), pointer;
   background: transparent;
   border: none;
   z-index: 0;

@@ -2,14 +2,28 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "a21b64e86f8d2329f5cc",
+  "hash": "1385cdcff6bcce65c10f",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": "stm.module.js"
+    "stm": [
+      "stm.module.js",
+      "stm.ac4da3044a7e5452c1ab.hot-update.js"
+    ]
   },
   "assets": [
+    {
+      "name": "ac4da3044a7e5452c1ab.hot-update.json",
+      "size": 45,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
@@ -21,6 +35,30 @@
     {
       "name": "images/arrow-right.svg",
       "size": 1086,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/arrows-left.png",
+      "size": 940,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/arrows-right.png",
+      "size": 708,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/arrows.png",
+      "size": 838,
       "chunks": [],
       "chunkNames": [],
       "info": {},
@@ -92,7 +130,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 39495,
+      "size": 41963,
       "chunks": [
         "list"
       ],
@@ -103,8 +141,23 @@
       "emitted": false
     },
     {
+      "name": "stm.ac4da3044a7e5452c1ab.hot-update.js",
+      "size": 2798,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "stm.module.js",
-      "size": 5780829,
+      "size": 5790888,
       "chunks": [
         "stm"
       ],
@@ -112,8 +165,7 @@
         "stm"
       ],
       "info": {},
-      "emitted": true,
-      "isOverSizeLimit": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,
@@ -123,7 +175,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.ac4da3044a7e5452c1ab.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -135,7 +188,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.ac4da3044a7e5452c1ab.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

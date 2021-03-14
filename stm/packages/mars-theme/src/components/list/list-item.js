@@ -34,6 +34,7 @@ const Item = ({ state, item, large }) => {
     <Article>
       <Link link={item.link}>
         <FeaturedImage key={item.featured_media} id={item.featured_media} title={item.title.rendered} large={large} />
+        <Text>{item.title.rendered}</Text>
       </Link>
     </Article>
   );
@@ -42,6 +43,11 @@ const Item = ({ state, item, large }) => {
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
 
-const CenterContainer = styled.div`
-
+const Text = styled.div`
+  display: none;
+  @media (min-width: 100px) and (max-width: 576px) {
+    display: inline-block;
+    margin-left: 16px;
+    font-family: "Cutive Mono", monospace;
+  }
 `;

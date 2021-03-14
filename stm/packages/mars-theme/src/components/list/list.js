@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect, styled } from "frontity";
+import useInView from "@frontity/hooks/use-in-view";
 import Item from "./list-item";
 
 function shuffleArray(array) {
@@ -40,12 +41,13 @@ const List = ({ state }) => {
       {/* If the list is a taxonomy, we render a title. */}
 
       {projects.map(({ type, id }) => {
+        const { ref, inView } = useInView({ triggerOnce: true });
         const item = state.source[type][id];
         // if no featured media then don't show it
         if (item.featured_media !== 0) {
           iterator += 1;
           // Render one Item component for each one.
-          return (<Item key={item.id} item={item} large={sizeArray[iterator]} />);
+          return (<div ref={ref}>{inView ? <Item key={item.id} item={item} large={sizeArray[iterator]} />:<></>}</div>);
         }
        })}
     </Container>

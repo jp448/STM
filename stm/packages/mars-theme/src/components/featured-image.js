@@ -66,7 +66,6 @@ const Text = styled.div`
     visibility: visible;
   }
   @media (min-width: 100px) and (max-width: 576px) {
-    bottom: -24px;
-    visibility: visible;
+    display: none;
   }
 `;
