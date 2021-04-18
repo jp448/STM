@@ -37,9 +37,15 @@ export function sortItems(tableitems, header, direction) {
         break;
     case 'wettbewerb':
         if (direction) {
-            tableitems.sort((a, b) => (getData(a.acf.competition) > getData(b.acf.competition) ) ? 1 : -1);
+            tableitems.sort((a, b) => {
+                // ensure that empty or null fields are listed last
+                if(getData(a.acf.competition) === "" || getData(a.acf.competition) === null) return 1;
+                if(getData(b.acf.competition) === "" || getData(b.acf.competition) === null) return -1;
+                if(getData(a.acf.competition) === getData(b.acf.competition)) return 0;
+                return (getData(a.acf.competition) > getData(b.acf.competition) && getData(b.acf.competition).length > 0) ? 1 : -1;
+            });
         } else {
-            tableitems.sort((a, b) => (getData(a.acf.competition)  < getData(b.acf.competition) ) ? 1 : -1);
+            tableitems.sort((a, b) => (getData(a.acf.competition) < getData(b.acf.competition) ) ? 1 : -1);
         }
         break;
     case 'gebaut':

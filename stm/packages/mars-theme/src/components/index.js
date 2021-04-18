@@ -29,7 +29,6 @@ const Theme = ({ state, actions }) => {
 
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  console.log(data);
   
   /** turn off stm first page (false) turn on stm first page (true) */
   const [showIntro, setIntroState] = useState(true);
