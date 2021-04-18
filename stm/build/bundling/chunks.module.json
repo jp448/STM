@@ -1,21 +1,37 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.44.2",
-  "hash": "9b22c1c3f49a6603c384",
+  "version": "4.46.0",
+  "hash": "27ada3730c181c7a8f8f",
   "publicPath": "/static/",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": "stm.module.js"
+    "stm": [
+      "stm.module.js",
+      "stm.134b6c6a82b2209263c3.hot-update.js"
+    ]
   },
   "assets": [
+    {
+      "name": "134b6c6a82b2209263c3.hot-update.json",
+      "size": 45,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "images/arrow-left.svg",
       "size": 1000,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrow-left.svg"
+      },
       "emitted": false
     },
     {
@@ -23,7 +39,9 @@
       "size": 1086,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrow-right.svg"
+      },
       "emitted": false
     },
     {
@@ -31,7 +49,9 @@
       "size": 940,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrows-left.png"
+      },
       "emitted": false
     },
     {
@@ -39,7 +59,9 @@
       "size": 708,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrows-right.png"
+      },
       "emitted": false
     },
     {
@@ -47,7 +69,9 @@
       "size": 838,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrows.png"
+      },
       "emitted": false
     },
     {
@@ -55,7 +79,9 @@
       "size": 941,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/chevron_down.svg"
+      },
       "emitted": false
     },
     {
@@ -63,7 +89,9 @@
       "size": 837,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/chevron_up.svg"
+      },
       "emitted": false
     },
     {
@@ -71,7 +99,9 @@
       "size": 20369,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/competition.png"
+      },
       "emitted": false
     },
     {
@@ -79,7 +109,9 @@
       "size": 7866,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/download.png"
+      },
       "emitted": false
     },
     {
@@ -87,7 +119,9 @@
       "size": 1068,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/exit.svg"
+      },
       "emitted": false
     },
     {
@@ -95,7 +129,9 @@
       "size": 23113,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/info.png"
+      },
       "emitted": false
     },
     {
@@ -103,7 +139,9 @@
       "size": 43725,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/logo.png"
+      },
       "emitted": false
     },
     {
@@ -111,12 +149,14 @@
       "size": 21910,
       "chunks": [],
       "chunkNames": [],
-      "info": {},
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/project.png"
+      },
       "emitted": false
     },
     {
       "name": "list.module.js",
-      "size": 41963,
+      "size": 42576,
       "chunks": [
         "list"
       ],
@@ -127,8 +167,23 @@
       "emitted": false
     },
     {
+      "name": "stm.134b6c6a82b2209263c3.hot-update.js",
+      "size": 57264,
+      "chunks": [
+        "stm"
+      ],
+      "chunkNames": [
+        "stm"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "stm.module.js",
-      "size": 5794684,
+      "size": 7134332,
       "chunks": [
         "stm"
       ],
@@ -146,7 +201,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.134b6c6a82b2209263c3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -158,7 +214,8 @@
         "stm"
       ],
       "assets": [
-        "stm.module.js"
+        "stm.module.js",
+        "stm.134b6c6a82b2209263c3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -174,6 +231,55 @@
       "childAssets": {}
     }
   },
+  "chunks": [
+    {
+      "id": "list",
+      "rendered": false,
+      "initial": false,
+      "entry": false,
+      "size": 23331,
+      "names": [
+        "list"
+      ],
+      "files": [
+        "list.module.js"
+      ],
+      "hash": "15327525c9aae93392b8",
+      "siblings": [],
+      "parents": [
+        "stm"
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [],
+      "filteredModules": 0,
+      "origins": []
+    },
+    {
+      "id": "stm",
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 1978744,
+      "names": [
+        "stm"
+      ],
+      "files": [
+        "stm.module.js",
+        "stm.134b6c6a82b2209263c3.hot-update.js"
+      ],
+      "hash": "01183be9ca425cbe99cd",
+      "siblings": [],
+      "parents": [],
+      "children": [
+        "list"
+      ],
+      "childrenByOrder": {},
+      "modules": [],
+      "filteredModules": 0,
+      "origins": []
+    }
+  ],
   "logging": {
     "webpack.buildChunkGraph.visitModules": {
       "entries": [],
@@ -181,5 +287,6 @@
       "debug": false
     }
   },
-  "children": []
+  "children": [],
+  "generator": "loadable-components"
 }

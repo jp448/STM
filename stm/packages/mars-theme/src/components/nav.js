@@ -65,7 +65,7 @@ const Nav = ({ state, actions }) => {
           aria-current={state.router.link === e.link ? "page" : undefined}>
             {e.icon !== undefined ? 
               <>
-              <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px"/>
+              <img src={require(`./../img/${e.icon}.png`).default} width="50px" height= "50px"/>
               {e.name !== "stm" ?
               <ToolTipText>{e.name}</ToolTipText> :
               ""}
@@ -78,7 +78,7 @@ const Nav = ({ state, actions }) => {
           onClick={() => toggleNavBar()}>
             {e.icon !== undefined ? 
               <>
-                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" />
+                <img src={require(`./../img/${e.icon}.png`).default} width="50px" height= "50px" />
                 <ToolTipText>{e.name}</ToolTipText>
               </> : e.name}
         </NavLink>
