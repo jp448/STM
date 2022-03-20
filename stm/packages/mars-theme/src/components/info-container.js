@@ -46,4 +46,5 @@ const Title = styled.h1`
   font-size: 1rem !important;
   text-align: left !important;
   text-decoration: none !important;
+  display: inline;
 `;

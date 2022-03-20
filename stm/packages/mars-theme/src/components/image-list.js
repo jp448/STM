@@ -27,7 +27,6 @@ export default connect(ImageList);
 
 const Container = styled.div`
   position: relative;
-  overflow-y: scroll;
   margin-left: auto;
   margin-right: auto;
   @media (min-width: 100px) and (max-width: 576px) {

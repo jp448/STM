@@ -53,7 +53,7 @@ const MenuModal = ({ state, actions }) => {
         ? "page" : undefined}>
             {e.icon !== undefined ? 
               <ImageContent>
-                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" key={e.name} />
+                <img src={require(`./../img/${e.icon}.png`).default} width="50px" height= "50px" key={e.name} />
                 {e.name !== "stm" ?
                   <ToolTipText>{e.name}</ToolTipText> :
                 ""}
@@ -66,7 +66,7 @@ const MenuModal = ({ state, actions }) => {
             onClick={() => showSubMenu(e.id)}>
               {e.icon !== undefined ? 
               <ImageContent>
-                <img src={require(`./../img/${e.icon}.png`)} width="50px" height= "50px" key={e.name} />
+                <img src={require(`./../img/${e.icon}.png`).default} width="50px" height= "50px" key={e.name} />
                 <ToolTipText>{e.name}</ToolTipText>
               </ImageContent> : e.name}
           </MenuLink>

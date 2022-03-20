@@ -16,7 +16,7 @@ import chevronUp from "./../../img/chevron_up.svg";
 
 const Table = ({ state, items }) => {
   const data = state.source.get(state.router.link);
-  const [selectedHeader, setSelectedHeader] = useState('');
+  const [selectedHeader, setSelectedHeader] = useState('gebaut');
   const [rowClicked, setRowClicked] = useState(-1);
 
   let tableheaders = [];
@@ -89,7 +89,7 @@ const Table = ({ state, items }) => {
     } else if (item.acf.gallery.length > 0) {
         hasHover = true;
     }
-
+    console.log(item);
     let row_content = [];
     tableheaders.forEach((obj, idx) => {
         row_content.push(getTableElement(item[obj.path][obj.resource], hasHover, idx))

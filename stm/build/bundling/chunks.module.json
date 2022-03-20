@@ -1,26 +1,21 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.46.0",
-  "hash": "27ada3730c181c7a8f8f",
-  "publicPath": "/static/",
+  "hash": "70c1feabcc64c7cfdd26",
+  "publicPath": "",
   "outputPath": "/Users/jocelynproctor/code/jp448/STM/stm/build/static",
   "assetsByChunkName": {
     "list": "list.module.js",
-    "stm": [
-      "stm.module.js",
-      "stm.134b6c6a82b2209263c3.hot-update.js"
-    ]
+    "stm": "stm.module.js"
   },
   "assets": [
     {
-      "name": "134b6c6a82b2209263c3.hot-update.json",
-      "size": 45,
+      "name": "images/arrow-down.png",
+      "size": 1396,
       "chunks": [],
       "chunkNames": [],
       "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
+        "sourceFilename": "packages/mars-theme/src/img/arrow-down.png"
       },
       "emitted": false
     },
@@ -41,6 +36,16 @@
       "chunkNames": [],
       "info": {
         "sourceFilename": "packages/mars-theme/src/img/arrow-right.svg"
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/arrow_down.svg",
+      "size": 1207,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "sourceFilename": "packages/mars-theme/src/img/arrow_down.svg"
       },
       "emitted": false
     },
@@ -156,7 +161,7 @@
     },
     {
       "name": "list.module.js",
-      "size": 42576,
+      "size": 42708,
       "chunks": [
         "list"
       ],
@@ -167,23 +172,8 @@
       "emitted": false
     },
     {
-      "name": "stm.134b6c6a82b2209263c3.hot-update.js",
-      "size": 57264,
-      "chunks": [
-        "stm"
-      ],
-      "chunkNames": [
-        "stm"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
       "name": "stm.module.js",
-      "size": 7134332,
+      "size": 7510984,
       "chunks": [
         "stm"
       ],
@@ -195,27 +185,13 @@
     }
   ],
   "filteredAssets": 0,
-  "entrypoints": {
-    "stm": {
-      "chunks": [
-        "stm"
-      ],
-      "assets": [
-        "stm.module.js",
-        "stm.134b6c6a82b2209263c3.hot-update.js"
-      ],
-      "children": {},
-      "childAssets": {}
-    }
-  },
   "namedChunkGroups": {
     "stm": {
       "chunks": [
         "stm"
       ],
       "assets": [
-        "stm.module.js",
-        "stm.134b6c6a82b2209263c3.hot-update.js"
+        "stm.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -231,62 +207,19 @@
       "childAssets": {}
     }
   },
+  "generator": "loadable-components",
   "chunks": [
     {
       "id": "list",
-      "rendered": false,
-      "initial": false,
-      "entry": false,
-      "size": 23331,
-      "names": [
-        "list"
-      ],
       "files": [
         "list.module.js"
-      ],
-      "hash": "15327525c9aae93392b8",
-      "siblings": [],
-      "parents": [
-        "stm"
-      ],
-      "children": [],
-      "childrenByOrder": {},
-      "modules": [],
-      "filteredModules": 0,
-      "origins": []
+      ]
     },
     {
       "id": "stm",
-      "rendered": true,
-      "initial": true,
-      "entry": true,
-      "size": 1978744,
-      "names": [
-        "stm"
-      ],
       "files": [
-        "stm.module.js",
-        "stm.134b6c6a82b2209263c3.hot-update.js"
-      ],
-      "hash": "01183be9ca425cbe99cd",
-      "siblings": [],
-      "parents": [],
-      "children": [
-        "list"
-      ],
-      "childrenByOrder": {},
-      "modules": [],
-      "filteredModules": 0,
-      "origins": []
+        "stm.module.js"
+      ]
     }
-  ],
-  "logging": {
-    "webpack.buildChunkGraph.visitModules": {
-      "entries": [],
-      "filteredEntries": 5,
-      "debug": false
-    }
-  },
-  "children": [],
-  "generator": "loadable-components"
+  ]
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { styled } from "frontity";
+import arrowDown from "./../../img/arrow_down.svg";
 
 //accordian is toggled when user clicks on the title in the project post page. 
 
@@ -45,7 +46,7 @@ function Accordion(props) {
         </AccordionText> 
       </AccordionContent>  
       <AccordionStyle ref={title} onClick={toggleAccordion}>
-        <AccordionTitle>{props.title}<i className="fas fa-sort-up"></i></AccordionTitle>
+        <AccordionTitle><Arrow src={arrowDown}/>{props.title}</AccordionTitle>
       </AccordionStyle>
     </AccordionSection>
   );
@@ -98,4 +99,10 @@ const AccordionText = styled.div`
     padding: 18px;
     border-top: 4px solid black;
     font-family: 'Cutive Mono', monospace;
+`;
+
+const Arrow = styled.img`
+    height: 16px;
+    float: left;
+    padding-right: 10px;
 `;
